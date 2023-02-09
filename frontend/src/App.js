@@ -1,7 +1,12 @@
 import "./App.css";
+import PostList from "./components/PostList/PostList";
 
 function App() {
-  return <></>;
+  return (
+    <main>
+      <PostList />
+    </main>
+  );
 }
 
 export default App;
