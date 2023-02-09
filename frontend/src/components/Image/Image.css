@@ -1,5 +1,9 @@
 img.imgPost {
-  max-width: 50%;
-  border: 1px solid black;
-  box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.26);
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.319);
+  margin: 20px;
+  float: right;
 }

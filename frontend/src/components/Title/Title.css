@@ -1,5 +1,8 @@
 h2.title {
-  margin: 5px;
-  text-align: center;
-  border-bottom: 1px double black;
+  font-size: 20px;
+  margin: 5px 5px;
+  padding: 5px;
+  position: relative;
+  top: 8px;
+  text-align: start;
 }

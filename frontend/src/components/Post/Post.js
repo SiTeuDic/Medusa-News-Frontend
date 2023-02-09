@@ -26,7 +26,7 @@ const Post = () => {
     <article className="post-article">
       <Title title={data.title} />
       <Introduction introduction={data.introduction} />
-      <Image />
+      <Image image={data.image} />
       <Body body={data.body} />
       <Subject subject={data.subject} />
       <Vote vote={data.upVote} />

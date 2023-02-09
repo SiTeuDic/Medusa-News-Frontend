@@ -1,15 +1,7 @@
 import "./Subject.css";
 
 const Subject = ({ subject }) => {
-  return (
-    <span className="subject">
-      <ul className="subjectList">
-        <li className="subjectListItem">{subject}</li>
-        <li className="subjectListItem">{subject}</li>
-        <li className="subjectListItem">{subject}</li>
-      </ul>
-    </span>
-  );
+  return <span className="subject">{subject}</span>;
 };
 
 export default Subject;

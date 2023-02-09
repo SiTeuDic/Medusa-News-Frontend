@@ -2,12 +2,17 @@ import "./Vote.css";
 
 const Vote = ({ vote }) => {
   return (
-    <div className="voteDiv">
-      <p className="vote">⬆️</p>
-      <p className="vote">⬇️</p>
-
-      <p className="vote">{vote}</p>
-    </div>
+    <ul className="listVote">
+      <li className="elementlist">
+        <p className="vote">+</p>
+      </li>
+      <li className="elementlist">
+        <p className="vote">-</p>
+      </li>
+      <li className="elementlist">
+        <p className="voteNum">{vote}</p>
+      </li>
+    </ul>
   );
 };
 

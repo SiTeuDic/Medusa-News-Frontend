@@ -1,11 +1,11 @@
 import "./App.css";
-import Post from "./components/Post/Post";
+import PostList from "./components/PostList/PostList";
 
 function App() {
   return (
-    <>
-      <Post />
-    </>
+    <main>
+      <PostList />
+    </main>
   );
 }
 
