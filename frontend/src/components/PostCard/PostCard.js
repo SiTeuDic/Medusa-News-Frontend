@@ -23,7 +23,7 @@ const PostCard = ({
       {imgName && <ImagePost imgName={imgName} title={title} />}
       <Title title={title} id={id} />
       <Body body={body} />
-      <Vote vote={vote} />
+      <Vote vote={vote} id={id} />
     </article>
   );
 };

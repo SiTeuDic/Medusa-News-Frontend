@@ -1,3 +1,36 @@
+import { useEffect, useState } from "react";
+
+const DATE_UNITS = [
+  ["day", 86400],
+  ["hour", 3600],
+  ["minute", 60],
+  ["second", 1],
+];
+
+const getDayDiffs = (timestamp) => {
+  const now = Date.now();
+  const elapsed = (timestamp - now) / 1000;
+
+  for (const [unit, secondsInUnit] of DATE_UNITS) {
+    if (Math.abs(elapsed) > secondsInUnit || unit === "second") {
+      const value = Math.floor(elapsed / secondsInUnit) * -1;
+      return { value, unit };
+    }
+  }
+};
+
+const useTimeAgo = (date) => {
+  const timestamp = new Date(date).getTime();
+  const { value, unit } = getDayDiffs(timestamp);
+  const rtf = new Intl.RelativeTimeFormat("es", {
+    style: "short",
+  });
+  console.log("[useTimeAgo]: ", value, unit);
+  return rtf.format(value, unit);
+};
+
+export default useTimeAgo;
+
 /* const DATE_UNITS = {
   day: 86400,
   hour: 3600,
@@ -39,34 +72,3 @@ export const useTimeAgo = (date) => {
   return { dateTime: formattedDate, timeAgo };
 };
  */
-import { useEffect, useState } from "react";
-
-const DATE_UNITS = [
-  ["day", 86400],
-  ["hour", 3600],
-  ["minute", 60],
-  ["second", 1],
-];
-
-const getDayDiffs = (timestamp) => {
-  const now = Date.now();
-  const elapsed = (now - timestamp) / 1000;
-  for (const [unit, secondsInUnit] of DATE_UNITS) {
-    if (Math.abs(elapsed) > secondsInUnit || unit === "second") {
-      const value = Math.floor(elapsed / secondsInUnit);
-      return { value, unit };
-    }
-  }
-};
-
-export const useTimeAgo = (date) => {
-  const timestamp = new Date(date).getTime();
-
-  const { value, unit } = getDayDiffs(timestamp);
-
-  const rtf = new Intl.RelativeTimeFormat("es", {
-    style: "short",
-  });
-
-  return rtf.format(value, unit);
-};

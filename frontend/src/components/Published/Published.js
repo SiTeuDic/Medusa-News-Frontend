@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { useTimeAgo } from "../../hooks/useTimeAgo";
+import useTimeAgo from "../../hooks/useTimeAgo";
 import useUser from "../../hooks/useUser";
 
 import "./Published.css";
 
 const Published = ({ userId, date }) => {
   const { user, error, loading } = useUser(userId);
-  console.log("[Published]: ", user, error, loading);
+
   // const { dateTime, timeAgo } = useTimeAgo(date);
   const timeAgo = useTimeAgo(date);
 

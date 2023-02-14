@@ -14,7 +14,7 @@ const SinglePostPage = () => {
         introduction={post.data.introduction}
         imgName={post.data.image}
         body={post.data.body}
-        subjects={post.subjects}
+        subject={post.data.subject}
         upVote={post.data.upVote}
         date={post.data.create_date}
         userId={post.data.user_id}

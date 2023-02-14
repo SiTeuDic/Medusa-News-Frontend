@@ -71,3 +71,63 @@ export const getPostsService = async () => {
 
   return json.data;
 };
+
+export const postNewService = async ({
+  title,
+  introduction,
+  body,
+  subject,
+  token,
+}) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/`, {
+    method: "POST",
+    body: JSON.stringify({ title, introduction, body, subject }),
+    headers: {
+      Authorization: token,
+      "Content-Type": "application/json",
+    },
+  });
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const upVotePostService = async (id, token) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${id}/up`, {
+    method: "PUT",
+    headers: {
+      Authorization: token,
+      "Content-Type": "application/json",
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const downVotePostService = async (id, token) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${id}/donw`, {
+    method: "PUT",
+    headers: {
+      Authorization: token,
+      "Content-Type": "application/json",
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
