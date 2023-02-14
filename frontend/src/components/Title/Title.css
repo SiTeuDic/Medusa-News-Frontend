@@ -5,4 +5,10 @@ h2.title {
   position: relative;
   top: 8px;
   text-align: start;
+  text-decoration: none;
+}
+
+.titleLink {
+  text-decoration: none;
+  color: black;
 }

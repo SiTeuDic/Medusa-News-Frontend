@@ -1,8 +1,10 @@
+import PostList from "../components/PostList/PostList";
+
 export const HomePage = () => {
   return (
     <section>
       <h1>Noticias</h1>
-      <p>Lista de noticias</p>
+      <PostList />
     </section>
   );
 };

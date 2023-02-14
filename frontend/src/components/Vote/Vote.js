@@ -1,6 +1,7 @@
 import "./Vote.css";
 
 const Vote = ({ vote }) => {
+  console.log("[Vote]: ", vote);
   return (
     <ul className="listVote">
       <li className="elementlist">
