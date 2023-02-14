@@ -1,0 +1,28 @@
+header {
+  background-size: cover;
+  background-position-y: center;
+
+  display: flex;
+
+  align-items: center;
+  border-bottom: 1px solid rgb(87, 87, 87);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+img.imgHeader {
+  max-width: 7rem;
+  filter: drop-shadow(0px 1px 2px rgb(0, 0, 0));
+}
+
+.titleHeader {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+}
+
+h1.titleHeader {
+  text-align: center;
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+}

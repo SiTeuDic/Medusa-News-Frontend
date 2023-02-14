@@ -11,6 +11,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { UserPage } from "./pages/UserPage";
 import PostList from "./components/PostList/PostList";
+import SinglePostPage from "./pages/SinglePostPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="user/:id" element={<UserPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/new/:id" element={<SinglePostPage />} />
       </Routes>
       <Footer />
     </main>

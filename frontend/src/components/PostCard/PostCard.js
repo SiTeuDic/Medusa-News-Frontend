@@ -2,18 +2,26 @@ import Body from "../Body/Body";
 import Subject from "../Subject/Subject";
 import Title from "../Title/Title";
 import Vote from "../Vote/Vote";
-import Image from "../Image/Image";
+import ImagePost from "../ImagePost/ImagePost";
 import "./PostCard.css";
+import Published from "../Published/Published";
 
-const PostCard = ({ title, body, vote, subject }) => {
+const PostCard = ({
+  title,
+  body,
+  vote,
+  subject,
+  userId,
+  date,
+  imgName,
+  id,
+}) => {
   return (
     <article className="postCard">
       <Subject subject={subject} />
-      <p className="publicado">
-        Publicado hace 2 horas por <b>Nacho</b>
-      </p>
-      <Image />
-      <Title title={title} />
+      <Published userId={userId} date={date} />
+      {imgName && <ImagePost imgName={imgName} title={title} />}
+      <Title title={title} id={id} />
       <Body body={body} />
       <Vote vote={vote} />
     </article>
