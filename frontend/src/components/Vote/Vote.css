@@ -1,34 +1,27 @@
-ul.listVote {
+span.listVote {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
   position: relative;
   bottom: 5px;
   left: 9px;
-  gap: 10px;
-  padding: 10px 0;
 
-  width: 90%;
+  width: 5rem;
+  height: 1.5rem;
+  background-color: rgb(73, 73, 73);
+  color: white;
+
+  border-radius: 2rem;
 }
 
-p.vote {
-  font-weight: bold;
-  text-align: center;
-  color: gray;
-  border: 2px solid gray;
-  border-radius: 10px;
-  display: inline-block;
-  height: 20px;
-  width: 30px;
-  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.225);
+p.vote,
+p.buttonvote {
+  padding: 4px 1px;
+  height: 100%;
 }
 
-p.voteNum {
-  text-align: center;
-  font-weight: bold;
-  height: 20px;
-  width: 30px;
-}
-
-p.vote:active {
-  box-shadow: none;
+p.buttonvote:hover {
+  transform: scale(1.2);
 }
