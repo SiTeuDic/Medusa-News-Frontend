@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom";
 import "./Subject.css";
 
 const Subject = ({ subject }) => {
-  return <span className="subject">{subject}</span>;
+  return (
+    <Link to={`/${subject}`}>
+      <span className="subject">{subject}</span>
+    </Link>
+  );
 };
 
 export default Subject;

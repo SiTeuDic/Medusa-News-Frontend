@@ -68,7 +68,6 @@ export const getPostsService = async () => {
   if (!response.ok) {
     throw new Error(json.message);
   }
-
   return json.data;
 };
 
@@ -77,14 +76,22 @@ export const postNewService = async ({
   introduction,
   body,
   subject,
+  image,
   token,
 }) => {
+  const formdata = new FormData();
+  formdata.append("title", title);
+  formdata.append("introduction", introduction);
+  formdata.append("body", body);
+  formdata.append("subject", subject);
+  formdata.append("image", image);
+  console.log("[postNewService]: ", image);
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/`, {
     method: "POST",
-    body: JSON.stringify({ title, introduction, body, subject }),
+    body: formdata,
+
     headers: {
       Authorization: token,
-      "Content-Type": "application/json",
     },
   });
   const json = await response.json();
@@ -122,6 +129,18 @@ export const downVotePostService = async (id, token) => {
       "Content-Type": "application/json",
     },
   });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const getPostsBySubjectService = async (subject) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${subject}`);
 
   const json = await response.json();
 
