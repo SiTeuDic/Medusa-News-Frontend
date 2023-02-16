@@ -10,9 +10,9 @@ import { RegisterPage } from "./pages/RegisterPage";
 import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { UserPage } from "./pages/UserPage";
-import PostList from "./components/PostList/PostList";
 import SinglePostPage from "./pages/SinglePostPage";
 import CreatePostPage from "./pages/CreatePostPage";
+import { PostBySubjectPage } from "./pages/PostBySubjectPage";
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/new/:id" element={<SinglePostPage />} />
         <Route path="/createNew" element={<CreatePostPage />} />
+        <Route path="/:subject" element={<PostBySubjectPage />} />
       </Routes>
       <Footer />
     </main>

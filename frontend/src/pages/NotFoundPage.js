@@ -16,7 +16,8 @@ export const NotFoundPage = () => {
           principal
         </RoughNotation>
       </Link>
-      <img className="notFoundImg" src="/medusa.png" alt="" />
+      <h2 className="titeleNFP">Página no encontrada</h2>
+      <img className="notFoundImg" src="/medusa_notFound.png" alt="" />
 
       <p className="notFoundText">
         <RoughNotation
@@ -25,27 +26,13 @@ export const NotFoundPage = () => {
           color="black"
           strokeWidth={"1.5"}
           animationDelay={1000}
-          animationDuration={"1000"}
-          iterations="3"
-          padding={[1, 10]}
+          animationDuration={"2000"}
+          iterations="6"
+          padding={[2, 10]}
         >
           404
         </RoughNotation>
       </p>
-      <h1>Página no encontrada</h1>
-
-      {/* <h1>Página no encontrada</h1>
-      <RoughNotation
-        type="strike-through"
-        show={true}
-        color="black"
-        strokeWidth="20"
-        animationDelay={"1000"}
-        animationDuration={"500"}
-        padding={[0, 0]}
-      >
-        <img className="notFoundImg" src="/medusa.png" alt="" />
-      </RoughNotation> */}
     </section>
   );
 };

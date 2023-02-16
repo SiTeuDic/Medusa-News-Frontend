@@ -7,68 +7,45 @@ const DATE_UNITS = [
   ["second", 1],
 ];
 
+const getFormatDate = (date) => {
+  const timesplited = date.split("T");
+  const timesplitedStr = `${timesplited[0]} ${timesplited[1]}`;
+  const formated = timesplitedStr.split(".");
+  const timestamp = new Date(formated[0]);
+
+  return timestamp;
+};
+
 const getDayDiffs = (timestamp) => {
   const now = Date.now();
   const elapsed = (timestamp - now) / 1000;
 
   for (const [unit, secondsInUnit] of DATE_UNITS) {
     if (Math.abs(elapsed) > secondsInUnit || unit === "second") {
-      const value = Math.floor(elapsed / secondsInUnit) * -1;
+      const value = Math.floor(elapsed / secondsInUnit);
       return { value, unit };
     }
   }
 };
 
 const useTimeAgo = (date) => {
-  const timestamp = new Date(date).getTime();
-  const { value, unit } = getDayDiffs(timestamp);
+  const timestamp = getFormatDate(date);
+
+  const [timeAgo, setTiemago] = useState(() => getDayDiffs(timestamp));
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newTimeAgo = getDayDiffs(timestamp);
+      setTiemago(newTimeAgo);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [timestamp]);
+
   const rtf = new Intl.RelativeTimeFormat("es", {
-    style: "short",
+    style: "narrow",
   });
-  console.log("[useTimeAgo]: ", value, unit);
+  const { value, unit } = timeAgo;
+
   return rtf.format(value, unit);
 };
 
 export default useTimeAgo;
-
-/* const DATE_UNITS = {
-  day: 86400,
-  hour: 3600,
-  minute: 60,
-  second: 1,
-};
-
-const getSecondsDiff = (timeStamp) => new Date(Date.now() - timeStamp) / 1000;
-
-const getUnitAndValueDate = (secondsElapsed) => {
-  for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
-    if (Math.abs(secondsElapsed) > secondsInUnit || unit === "second") {
-      const value = Math.floor(secondsElapsed / secondsInUnit);
-      console.log("[getUnitAndValueDate]: ", value);
-      return { value, unit };
-    }
-  }
-};
-
-const getTimeAgo = (timeStamp, locale) => {
-  const rtf = new Intl.RelativeTimeFormat(locale);
-
-  const secondsElapsed = getSecondsDiff(timeStamp);
-  const { value, unit } = getUnitAndValueDate(secondsElapsed);
-
-  return rtf.format(value, unit);
-};
-
-export const useTimeAgo = (date) => {
-  const timestamp = new Date(date).getTime();
-  const locale = "es";
-  const timeAgo = getTimeAgo(timestamp, locale);
-
-  const now = new Date(timestamp);
-  const formattedDate = new Intl.DateTimeFormat(locale, {
-    month: "short",
-    day: "numeric",
-  }).format(now);
-  return { dateTime: formattedDate, timeAgo };
-};
- */

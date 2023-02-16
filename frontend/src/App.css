@@ -3,31 +3,79 @@ main {
   background-color: rgb(185, 188, 195);
 }
 
-section.creaePostSection {
-  display: flex;
-  flex-direction: column;
-
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-textarea {
-  width: 100%;
-  height: 5rem;
-  resize: none;
-}
-
-input {
-  width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   border: none;
 }
 
-/* notFound */
+/* Create Post */
 
-img.notFoundImg {
+section.creaePostSection {
+  font-family: "Merriweather", serif;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+
   width: 100%;
+  background-color: white;
 }
+
+fieldset {
+  border: none;
+}
+
+textarea.post {
+  width: 100%;
+  height: 5rem;
+  resize: none;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+}
+
+input.post {
+  width: 100%;
+  border-bottom: none;
+  box-shadow: none;
+
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+img.previewImg {
+  width: 5rem;
+}
+
+input.post:focus,
+textarea.post:focus {
+  transform: scale(1.02);
+  background-color: rgba(142, 139, 139, 0.284);
+  transition: all 0.2s;
+  border-bottom: 2px solid black;
+  padding: 5px;
+}
+
+label.focus {
+  font-size: 1.3rem;
+  transition: all 0.2s linear 0.2s;
+
+  z-index: 1;
+}
+
+label.image-picker + input.image-picker {
+  font-weight: 700;
+  color: white;
+  background-color: black;
+}
+
+/* ///////////////////// */
+
+/* notFound */
 
 section.notFoundSection {
   width: 100%;
@@ -35,12 +83,37 @@ section.notFoundSection {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+img.notFoundImg {
+  width: 160%;
+  border-bottom: 3px solid rgb(147, 147, 147);
 }
 
 p.notFoundText {
-  font-size: 4.5rem;
+  font-size: 6rem;
   text-align: center;
   position: absolute;
-  top: 55%;
-  left: 37%;
+  top: 30%;
+  left: 30%;
+}
+
+h2.titeleNFP {
+  font-family: "Merriweather", serif;
+
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+/* PAGE BY SUBJECT */
+
+h2.bySubjecth2 {
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+  color: gray;
+  text-align: center;
+
+  margin-top: 10px;
+  padding: 5px;
 }

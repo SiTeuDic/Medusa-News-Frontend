@@ -3,12 +3,13 @@ span.listVote {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  gap: 5px;
 
   position: relative;
   bottom: 5px;
   left: 9px;
 
-  width: 5rem;
+  width: max-content;
   height: 1.5rem;
   background-color: rgb(73, 73, 73);
   color: white;
@@ -18,10 +19,13 @@ span.listVote {
 
 p.vote,
 p.buttonvote {
-  padding: 4px 1px;
+  padding: 3px 3px;
   height: 100%;
 }
-
+p.vote {
+  padding: 3px 9px;
+  cursor: default;
+}
 p.buttonvote:hover {
   transform: scale(1.2);
 }
