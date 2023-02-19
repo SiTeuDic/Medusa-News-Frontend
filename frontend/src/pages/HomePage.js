@@ -4,7 +4,7 @@ import useFetch from "../hooks/useFetch";
 export const HomePage = () => {
   return (
     <section>
-      <h1>Noticias</h1>
+      <h2>Noticias</h2>
       <PostList />
     </section>
   );

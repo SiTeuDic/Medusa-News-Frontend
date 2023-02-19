@@ -3,11 +3,31 @@ import { RoughNotation } from "react-rough-notation";
 import { VscCloudUpload } from "react-icons/vsc";
 
 import useFocus from "../hooks/useFocus";
-import useSendPost from "../hooks/useSendPost";
+import useField from "../hooks/useSendPost";
+import { getSinglePostService } from "../Services";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-const CreatePostPage = () => {
+const EditPostPage = () => {
+  const [currentPost, setCurrentPost] = useState([]);
+  const [currentImage, setCurrentImage] = useState("");
+  const { id } = useParams();
+
+  useEffect(() => {
+    const loadCurrentPost = async () => {
+      try {
+        const currentPost = await getSinglePostService(id);
+        console.log("[CreatePostPage]:", currentPost);
+        setCurrentPost(currentPost);
+        setCurrentImage(URL.createObjectURL(currentPost.image));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadCurrentPost();
+  }, [id]);
   const { post, handleChange, handleSubmit, handleFile, imagePreview } =
-    useSendPost();
+    useField();
 
   const focTitle = useFocus();
   const focIntroduction = useFocus();
@@ -15,7 +35,7 @@ const CreatePostPage = () => {
   const focSubjet = useFocus();
 
   return (
-    <section>
+    <>
       <h2>¿Qué esta pasando? </h2>
       <section className="creaePostSection">
         <form onSubmit={handleSubmit}>
@@ -40,7 +60,7 @@ const CreatePostPage = () => {
               )}
             </label>
             <input
-              value={post.title}
+              value={currentPost.title}
               type="text"
               onChange={handleChange}
               onFocus={focTitle.onFocus}
@@ -71,7 +91,7 @@ const CreatePostPage = () => {
               )}
             </label>
             <input
-              value={post.introduction}
+              value={currentPost.introduction}
               type="text"
               onChange={handleChange}
               className="post"
@@ -102,7 +122,7 @@ const CreatePostPage = () => {
               )}
             </label>
             <textarea
-              value={post.body}
+              value={currentPost.body}
               type="text"
               onChange={handleChange}
               className="post"
@@ -133,7 +153,7 @@ const CreatePostPage = () => {
               )}
             </label>
             <input
-              value={post.subject}
+              value={currentPost.subject}
               type="text"
               onChange={handleChange}
               className="post"
@@ -145,7 +165,7 @@ const CreatePostPage = () => {
           </fieldset>
 
           <fieldset className="inpFieldset">
-            {imagePreview ? (
+            {currentImage !== null ? (
               <div>
                 <span className="previewSpan">
                   <img
@@ -159,6 +179,7 @@ const CreatePostPage = () => {
                   {"Elige una imagen! "}
                   <VscCloudUpload className="cloud" />
                   <input
+                    value={currentImage}
                     className="imageInput"
                     name="image"
                     type="file"
@@ -174,7 +195,7 @@ const CreatePostPage = () => {
                   className="imageInput"
                   name="image"
                   type="file"
-                  value={post.image}
+                  value={currentImage}
                   onChange={handleFile}
                 />
               </label>
@@ -185,8 +206,8 @@ const CreatePostPage = () => {
           <button className="postButton">Enviar!</button>
         </form>
       </section>
-    </section>
+    </>
   );
 };
 
-export default CreatePostPage;
+export default EditPostPage;
