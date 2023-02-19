@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export const NotFoundPage = () => {
   return (
     <section className="notFoundSection">
-      <Link to="/">
-        Ir a la página
+      <Link to="/" className="notFoundLink">
+        {"Ir a la página "}
         <RoughNotation
           strokeWidth={"2"}
           show={true}
@@ -17,7 +17,6 @@ export const NotFoundPage = () => {
         </RoughNotation>
       </Link>
       <h2 className="titeleNFP">Página no encontrada</h2>
-      <img className="notFoundImg" src="/medusa_notFound.png" alt="" />
 
       <p className="notFoundText">
         <RoughNotation
@@ -26,12 +25,13 @@ export const NotFoundPage = () => {
           color="black"
           strokeWidth={"1.5"}
           animationDelay={1000}
-          animationDuration={"2000"}
-          iterations="6"
+          animationDuration={"700"}
+          iterations="3"
           padding={[2, 10]}
         >
           404
         </RoughNotation>
+        <img className="notFoundImg" src="/medusa_notFound.png" alt="" />
       </p>
     </section>
   );

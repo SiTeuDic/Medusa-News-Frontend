@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Merriweather:wght@300;400&family=Roboto:wght@300&display=swap");
 main {
-  background-color: rgb(185, 188, 195);
+  background-color: #faf7f0;
 }
 
 * {
@@ -13,17 +13,19 @@ main {
 /* Create Post */
 
 section.creaePostSection {
+  height: 90vh;
+  width: 90vw;
+
   font-family: "Merriweather", serif;
   text-align: left;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
+  justify-content: start;
 
-  width: 100%;
-  background-color: white;
+  margin-top: 10px;
+  margin-left: 5%;
+  background-color: #faf7f0;
 }
 
 fieldset {
@@ -32,45 +34,96 @@ fieldset {
 
 textarea.post {
   width: 100%;
-  height: 5rem;
-  resize: none;
-  border-bottom: 1px solid black;
+  height: 7rem;
+
+  border: 1px solid black;
   border-radius: 5px;
+  margin: 0.5rem 0rem;
+  background-color: #cdeee9;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.653);
 }
 
 input.post {
   width: 100%;
+  height: 2rem;
   border-bottom: none;
-  box-shadow: none;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.653);
 
+  margin: 0.5rem 0rem;
   border: 1px solid black;
   border-radius: 5px;
-}
-
-img.previewImg {
-  width: 5rem;
+  padding: 0.4rem;
+  background-color: #cdeee9;
 }
 
 input.post:focus,
 textarea.post:focus {
-  transform: scale(1.02);
-  background-color: rgba(142, 139, 139, 0.284);
-  transition: all 0.2s;
-  border-bottom: 2px solid black;
-  padding: 5px;
+  transform: scale(1);
+  background-color: rgb(192, 206, 240);
+  transition: all 0.2s linear 0.2s;
+
+  border: 1.5px solid black;
+  padding: 0.7rem;
 }
 
 label.focus {
   font-size: 1.3rem;
   transition: all 0.2s linear 0.2s;
-
   z-index: 1;
 }
 
-label.image-picker + input.image-picker {
-  font-weight: 700;
-  color: white;
-  background-color: black;
+input.imageInput {
+  display: none;
+}
+
+label.imputImageLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: #cdeee9;
+  padding: 5px;
+  border: 3px dotted #445f5b;
+  margin: 10px;
+  text-align: center;
+}
+
+.cloud {
+  font-size: 2rem;
+}
+
+span.previewSpan {
+  margin: auto;
+  display: block;
+  border: 1px solid black;
+  height: 5rem;
+  width: 5rem;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.653);
+}
+img.previewImg {
+  object-fit: cover;
+  height: 5rem;
+  width: 5rem;
+}
+
+fieldset.inpFieldset {
+  margin: auto;
+  width: max-content;
+}
+
+button.postButton {
+  display: block;
+  background-color: #445f5b;
+  font-size: 1.3rem;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.653);
+
+  padding: 0.5rem;
+  margin: auto;
 }
 
 /* ///////////////////// */
@@ -78,25 +131,32 @@ label.image-picker + input.image-picker {
 /* notFound */
 
 section.notFoundSection {
-  width: 100%;
+  width: 100vw;
   height: 100%;
+  text-align: center;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
+  gap: 3rem;
 }
+
+.notFoundLink {
+  margin-top: 5px;
+
+  font-size: 1.5rem;
+
+  text-decoration: none;
+  color: black;
+}
+
 img.notFoundImg {
-  width: 160%;
+  width: 100vw;
   border-bottom: 3px solid rgb(147, 147, 147);
+  display: block;
 }
 
 p.notFoundText {
   font-size: 6rem;
-  text-align: center;
-  position: absolute;
-  top: 30%;
-  left: 30%;
 }
 
 h2.titeleNFP {
@@ -104,6 +164,11 @@ h2.titeleNFP {
 
   font-size: 2rem;
   font-weight: bolder;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
 }
 
 /* PAGE BY SUBJECT */
