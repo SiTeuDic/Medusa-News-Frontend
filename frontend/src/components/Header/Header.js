@@ -1,17 +1,37 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Auth } from "../Auth/Auth";
 import "./Header.css";
 
 export const Header = () => {
+  const [header, setHeader] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 170) {
+      setHeader(true);
+    } else {
+      setHeader(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
-    <header style={{ backgroundImage: " url(/door.jpg)" }}>
-      <img className="imgHeader" src="medusa.png" alt="" />
-      <h1 className="titleHeader">
+    <header
+      className={header ? "mainHeader active" : "mainHeader"}
+      style={{ backgroundImage: " url(/door.jpg)" }}
+    >
+      <img
+        className={header ? "imgHeader active" : "imgHeader"}
+        src="medusa.png"
+        alt=""
+      />
+      <h1 className={header ? "titleHeader active" : "titleHeader"}>
         <Link className="titleHeader" to="/">
-          MEDUSA NEWS
+          MEDUSA
         </Link>
       </h1>
-      <nav>
+      <nav className={header ? "authNav active" : "authNav"}>
         <Auth />
       </nav>
     </header>

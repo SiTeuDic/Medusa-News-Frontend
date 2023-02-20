@@ -7,6 +7,7 @@ import "./PostCard.css";
 import Published from "../Published/Published";
 
 const PostCard = ({ post }) => {
+  console.log(post);
   return (
     <article className="postCard">
       <Subject subject={post.subject} />
@@ -14,7 +15,7 @@ const PostCard = ({ post }) => {
       {post.image && <ImagePost imgName={post.image} title={post.title} />}
       <Title title={post.title} id={post.id} />
       <Body body={post.body} />
-      <Vote vote={post.vote} id={post.id} />
+      <Vote vote={post.upVote} id={post.id} />
     </article>
   );
 };
