@@ -1,23 +1,44 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { GiHamburgerMenu } from "react-icons/gi";
+import "./Auth.css";
 
 export const Auth = () => {
   const { user, logout } = useContext(AuthContext);
-
-  return user ? (
+  const [menu, setMenu] = useState(false);
+  return (
     <section>
-      Logueado como <Link to={`/user/${user.id}`}>{user.user_name}</Link>{" "}
-      <button onClick={() => logout()}>Logout</button>
+      <GiHamburgerMenu onClick={() => setMenu(!menu)} />
+      {menu && (
+        <nav className="menuNav">
+          {user ? (
+            <ul>
+              <li className="menuLi">
+                <Link className="userMenuL" to={`/user/${user.id}`}>
+                  {user.user_name}
+                </Link>
+              </li>
+              <li className="menuLi">
+                <button onClick={() => logout()}>Logout</button>
+              </li>
+            </ul>
+          ) : (
+            <ul>
+              <li className="menuLi">
+                <Link className="userMenuL" to={"/register"}>
+                  Register
+                </Link>
+              </li>
+              <li className="menuLi">
+                <Link className="userMenuL" to={"/login"}>
+                  Login
+                </Link>
+              </li>
+            </ul>
+          )}
+        </nav>
+      )}
     </section>
-  ) : (
-    <ul>
-      <li>
-        <Link to={"/register"}>Register</Link>
-      </li>
-      <li>
-        <Link to={"/login"}>Login</Link>
-      </li>
-    </ul>
   );
 };

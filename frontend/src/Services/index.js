@@ -126,7 +126,7 @@ export const upVotePostService = async (id, token) => {
 };
 
 export const downVotePostService = async (id, token) => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${id}/donw`, {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${id}/down`, {
     method: "PUT",
     headers: {
       Authorization: token,
