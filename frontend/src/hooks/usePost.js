@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
-import { getPostsBySubjectService, getPostsService } from "../Services";
+import {
+  getPostsBySubjectService,
+  getPostsService,
+  getPostByUser,
+} from "../Services";
 
-const usePosts = (subject) => {
+const usePosts = (subject, userId) => {
   const [posts, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -10,7 +14,7 @@ const usePosts = (subject) => {
       try {
         setLoading(true);
         const data = await getPostsService();
-        console.log("[usePost]:", data);
+
         setPost(data);
       } catch (error) {
         setError(error.message);
@@ -29,12 +33,27 @@ const usePosts = (subject) => {
         setLoading(false);
       }
     };
+
+    const loadPostByUser = async (userId) => {
+      try {
+        setLoading(true);
+        const data = await getPostByUser(userId);
+        console.log("[usePost]:", data);
+        setPost(data.data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
     if (subject) {
       loadPostBySubject(subject);
+    } else if (userId) {
+      loadPostByUser(userId);
     } else {
       loadPost();
     }
-  }, [subject]);
+  }, [subject, userId]);
 
   return { posts, error, loading };
 };

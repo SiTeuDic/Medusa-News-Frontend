@@ -154,3 +154,21 @@ export const getPostsBySubjectService = async (subject) => {
 
   return json.data;
 };
+
+export const checkVoteUserServer = async (postId, userId) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/infoVotes/${postId}/${userId}`
+  );
+  const json = await response.json();
+
+  return json;
+};
+
+export const getPostByUser = async (userId) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/newUser/${userId}`
+  );
+  const json = await response.json();
+
+  return json;
+};

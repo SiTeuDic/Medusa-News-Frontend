@@ -29,7 +29,6 @@ function App() {
         <Route path="/editNew/:id" element={<EditPostPage />} />
         <Route path="/:subject" element={<PostBySubjectPage />} />
       </Routes>
-      <Footer />
     </main>
   );
 }

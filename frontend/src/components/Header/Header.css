@@ -109,12 +109,6 @@ nav.authNav.active {
   }
 
   /* ACTIVE */
-  header.mainHeader.active {
-    font-size: 1rem;
-    height: 4rem;
-    border-bottom: 1px solid black;
-    align-items: unset;
-  }
 
   img.imgHeader.active {
     width: 2rem;
@@ -122,8 +116,7 @@ nav.authNav.active {
   }
 
   h1.titleHeader.active {
-    transform: translateX(1rem);
-    transform: translateY(6.5rem);
+    transform: translateX(-5rem);
   }
 
   nav.authNav.active {

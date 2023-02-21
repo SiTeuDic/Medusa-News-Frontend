@@ -11,6 +11,8 @@ main {
   border: none;
 }
 
+/* HOME PAGE */
+
 /* Create Post */
 
 section.creaePostSection {
@@ -24,7 +26,7 @@ section.creaePostSection {
   flex-direction: column;
   justify-content: start;
 
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 5%;
   background-color: #faf7f0;
 }
@@ -160,13 +162,6 @@ p.notFoundText {
   font-size: 6rem;
 }
 
-h2.titeleNFP {
-  font-family: "Merriweather", serif;
-
-  font-size: 2rem;
-  font-weight: bolder;
-}
-
 footer {
   position: absolute;
   bottom: 0;
@@ -182,4 +177,84 @@ h2.bySubjecth2 {
 
   margin-top: 10px;
   padding: 5px;
+}
+
+/* LOGIN */
+
+section.loginSection {
+  height: 90vh;
+  width: 90vw;
+
+  font-family: "Merriweather", serif;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  margin-top: 20px;
+  margin-left: 5%;
+  background-color: #faf7f0;
+}
+
+input.loginInput {
+  width: 100%;
+  height: 2rem;
+  border-bottom: none;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.653);
+
+  margin: 0.5rem 0rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.4rem;
+  background-color: #cdeee9;
+}
+
+button.loginButton {
+  display: block;
+  background-color: #445f5b;
+  font-size: 1.3rem;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.653);
+
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* USERPAGE */
+
+ul.userSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+li.avatarUserli {
+  align-self: center;
+  border: 4px solid black;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  background-color: gray;
+}
+
+.avatarUser {
+  object-fit: cover;
+  width: 10rem;
+  height: 10rem;
+  filter: drop-shadow(0 0 10px rgb(0, 0, 0)) contrast(50%);
+}
+
+.regitredAtP {
+  display: block;
+  color: gray;
+}
+
+p.biografiaP {
+  font-family: "Merriweather", serif;
+
+  margin: 10px;
 }

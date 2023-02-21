@@ -1,6 +1,6 @@
 import Body from "../Body/Body";
 import Subject from "../Subject/Subject";
-import Title from "../Title/Title";
+import TitlePost from "../TitlePost/TitlePost";
 import Vote from "../Vote/Vote";
 import ImagePost from "../ImagePost/ImagePost";
 import "./PostCard.css";
@@ -13,7 +13,7 @@ const PostCard = ({ post }) => {
       <Subject subject={post.subject} />
       <Published userId={post.user_id} date={post.create_date} />
       {post.image && <ImagePost imgName={post.image} title={post.title} />}
-      <Title title={post.title} id={post.id} />
+      <TitlePost title={post.title} id={post.id} />
       <Body body={post.body} />
       <Vote vote={post.upVote} id={post.id} />
     </article>

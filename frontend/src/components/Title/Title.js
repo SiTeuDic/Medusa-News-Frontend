@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { RoughNotation } from "react-rough-notation";
 import "./Title.css";
-
-const Title = ({ title, id }) => {
+const Title = ({ text }) => {
   return (
-    <h2 className="title">
-      <Link className="titleLink" to={`/new/${id}`}>
-        {title}
-      </Link>
-    </h2>
+    <RoughNotation
+      show={true}
+      animationDelay={500}
+      animationDuration={1000}
+      iterations={3}
+      padding={[4, 0]}
+    >
+      <h2>{text}</h2>
+    </RoughNotation>
   );
 };
 

@@ -4,8 +4,8 @@ import { Loading } from "../Loading/Loading";
 import PostCard from "../PostCard/PostCard";
 import "./PostList.css";
 
-const PostList = ({ subject }) => {
-  const { posts, error, loading } = usePosts(subject);
+const PostList = ({ subject, userId }) => {
+  const { posts, error, loading } = usePosts(subject, userId);
   console.log("[PostList]:", posts);
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
