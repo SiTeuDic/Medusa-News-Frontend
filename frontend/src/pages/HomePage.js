@@ -1,10 +1,11 @@
 import PostList from "../components/PostList/PostList";
-import useFetch from "../hooks/useFetch";
+import Title from "../components/Title/Title";
 
 export const HomePage = () => {
   return (
     <section>
-      <h2>Noticias</h2>
+      <Title text={"Noticias"} />
+
       <PostList />
     </section>
   );

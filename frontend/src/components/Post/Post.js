@@ -3,7 +3,7 @@ import ImagePost from "../ImagePost/ImagePost";
 import Introduction from "../Introduction/Introduction";
 import Published from "../Published/Published";
 import Subject from "../Subject/Subject";
-import Title from "../Title/Title";
+import Title from "../TitlePost/TitlePost";
 import Vote from "../Vote/Vote";
 import "./Post.css";
 

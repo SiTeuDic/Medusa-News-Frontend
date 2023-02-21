@@ -1,28 +1,17 @@
 section.loadingSection {
   height: 100vh;
-
+  width: 100vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  position: relative;
-}
-
-p.loading {
-  font-family: "Merriweather", serif;
-
-  font-size: 3rem;
-}
-
-img.gridLoad {
-  width: 4rem;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.313);
   position: absolute;
-  bottom: 30%;
-  left: 40%;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-img.medusa {
-  position: absolute;
-  top: 4rem;
-  max-width: 100vw;
-  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.359));
+.loadingSpan {
+  width: 5rem;
+  height: 5rem;
 }

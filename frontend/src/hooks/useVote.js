@@ -1,60 +1,55 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { downVotePostService, upVotePostService } from "../Services";
+import {
+  checkVoteUserServer,
+  downVotePostService,
+  upVotePostService,
+} from "../Services";
 
-const useVote = (id, vote) => {
-  const initialValue = parseInt(vote) ?? 0;
+const useVote = (idPost, vote) => {
+  const initialValue = !isNaN(parseInt(vote)) ? parseInt(vote) : 0;
 
-  const [currentVote, setCurrentVote] = useState(initialValue);
   const [upVote, setupVote] = useState(initialValue);
-  const [downVote, setDownVote] = useState(initialValue);
-  const [btnActive, setBtnActive] = useState();
+
+  const [btnActive, setBtnActive] = useState(false);
 
   const { token, user } = useContext(AuthContext);
 
   const handleLikeClick = () => {
-    if (btnActive === "none") {
+    if (!btnActive) {
       setupVote(upVote + 1);
-      setBtnActive("like");
+      upVotePostService(idPost, token);
+      setBtnActive(true);
       return;
     }
 
-    if (btnActive === "like") {
+    if (btnActive) {
       setupVote(upVote - 1);
-      setBtnActive("none");
+      downVotePostService(idPost, token);
+      setBtnActive(false);
       return;
-    }
-
-    if (btnActive === "dislike") {
-      setupVote(upVote + 1);
-      setDownVote(downVote - 1);
-      setBtnActive("like");
     }
   };
 
-  const handleDisikeClick = () => {
-    if (btnActive === "none") {
-      setDownVote(downVote + 1);
-      setBtnActive("dislike");
-      return;
-    }
+  useEffect(() => {
+    const getcheckvotes = async () => {
+      /* console.log("userID", user.id); */
+      const voteCheked = await checkVoteUserServer(idPost, user.id);
+      if (voteCheked.vote) {
+        setBtnActive(true);
+      }
+    };
 
-    if (btnActive === "dislike") {
-      setDownVote(downVote - 1);
-      setBtnActive("none");
-      return;
-    }
+    getcheckvotes();
+  }, [idPost, user]);
+  //si el id de del user esta en los votos de la noticia, poner el estado a activo
 
-    if (btnActive === "like") {
-      setDownVote(downVote + 1);
-      setupVote(upVote - 1);
-      setBtnActive("dislike");
-    }
-  };
+  //ids de usuarios que,  botaron la noticia
+
   return {
     user,
     handleLikeClick,
-    handleDisikeClick,
+    btnActive,
     upVote,
   };
 };

@@ -1,10 +1,8 @@
 import { RoughNotation } from "react-rough-notation";
-
 import { VscCloudUpload } from "react-icons/vsc";
-
 import useFocus from "../hooks/useFocus";
 import useSendPost from "../hooks/useSendPost";
-
+import Title from "../components/Title/Title";
 const CreatePostPage = () => {
   const { post, handleChange, handleSubmit, handleFile, imagePreview } =
     useSendPost();
@@ -16,11 +14,12 @@ const CreatePostPage = () => {
 
   return (
     <section>
-      <h2>¿Qué esta pasando? </h2>
+      <Title text={"¿Qué está pasando?"} />
       <section className="creaePostSection">
         <form onSubmit={handleSubmit}>
           <fieldset className="test">
             <label
+              /* TODO: */
               className={focTitle.focus ? "test focus" : "test"}
               htmlFor="title"
             >
@@ -156,7 +155,7 @@ const CreatePostPage = () => {
                 </span>
 
                 <label className="imputImageLabel">
-                  {"Elige una imagen! "}
+                  {"Cambiar la imagen "}
                   <VscCloudUpload className="cloud" />
                   <input
                     className="imageInput"
