@@ -30,14 +30,14 @@ export const LoginPage = () => {
   };
   return (
     <section>
-      <Title text={"LogIn"} />
+      <Title text="LogIn" />
 
-      <section className="loginSection">
+      <section className="formSection">
         <form onSubmit={handleForm}>
           <fieldset>
             <label
-              className={focEmail.focus ? "test focus" : "test"}
               htmlFor="email"
+              className={focEmail.focus ? "input focus" : "input"}
             >
               {focEmail.focus ? (
                 <RoughNotation
@@ -55,7 +55,7 @@ export const LoginPage = () => {
               )}
             </label>
             <input
-              className="loginInput"
+              className="post"
               type="email"
               name="email"
               id="email"
@@ -68,7 +68,7 @@ export const LoginPage = () => {
           </fieldset>
           <fieldset>
             <label
-              className={focPass.focus ? "test focus" : "test"}
+              className={focPass.focus ? "input focus" : "input"}
               htmlFor="pass"
             >
               {focPass.focus ? (
@@ -87,7 +87,7 @@ export const LoginPage = () => {
               )}
             </label>
             <input
-              className="loginInput"
+              className="post"
               type="password"
               name="pass"
               id="pass"
@@ -99,7 +99,7 @@ export const LoginPage = () => {
             />
           </fieldset>
 
-          <button className="loginButton">Login</button>
+          <button className="postButton">Login</button>
           {error ? <p>{error}</p> : null}
         </form>
       </section>

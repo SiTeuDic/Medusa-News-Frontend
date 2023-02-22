@@ -1,23 +1,38 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage/ErrorMessage";
 import { Loading } from "../components/Loading/Loading";
 import useUser from "../hooks/useUser";
 import PostList from "../components/PostList/PostList";
-
+import { BiEdit } from "react-icons/bi/index";
 import RegistredAt from "../components/RegistredAt/RegistredAt";
 import Title from "../components/Title/Title";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
 export const UserPage = () => {
   const { id } = useParams();
   const { user, loading, error } = useUser(id);
+  const currentUser = useContext(AuthContext);
 
-  console.log(user.id);
+  // console.log("[CurrentUSer]: ", currentUser.user.id);
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
 
-  console.log("user", user);
   return (
     <section className="userSection">
       <ul className="userSection">
+        {currentUser.user.id === parseInt(id) ? (
+          <li className="editProfile">
+            <Link
+              className="editProfile"
+              to={`/editProfile/${currentUser.user.id}`}
+            >
+              <BiEdit />
+            </Link>
+          </li>
+        ) : (
+          ""
+        )}
         <li>
           <Title text={user.user_name} />
         </li>
@@ -25,29 +40,23 @@ export const UserPage = () => {
           {user.profile_image ? (
             <img
               className="avatarUser"
-              src={user.profile_image}
+              src={`${process.env.REACT_APP_BACKEND}/uploads/profileImages/${user.profile_image}`}
               alt="imagen de usuario"
             />
           ) : (
-            <img className="avatarUser" src="/medusa.png" alt=" medusaAvarat" />
+            <img
+              className="avatarUserDefault"
+              src="/medusaUser.png"
+              alt=" medusaAvarat"
+            />
           )}
         </li>
+        {user.name && <li>{user.name}</li>}
         <li>
           <p>Biografía</p>
         </li>
         <li>
-          <p className="biografiaP">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit nisi,
-            pellentesque dis suscipit nunc facilisi etiam ad magnis, enim turpis
-            scelerisque quisque cum aliquam blandit. Hac lobortis eleifend dui
-            fermentum posuere semper natoque, consequat sed ut ornare aliquet
-            sollicitudin, id elementum class erat potenti interdum. Felis ac
-            hendrerit fermentum est feugiat viverra sagittis, donec morbi taciti
-            eu porttitor nibh laoreet convallis, faucibus class per quis lacinia
-            integer. Laoreet nascetur urna ultrices cursus malesuada felis
-            turpis, consequat cras congue quam dictumst rutrum nisi vitae,
-            rhoncus odio viverra aenean mi nam
-          </p>
+          <p className="biografiaP">{user.bio}</p>
         </li>
         <li>
           <RegistredAt date={user.created_at} />
