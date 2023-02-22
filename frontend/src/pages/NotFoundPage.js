@@ -16,6 +16,7 @@ export const NotFoundPage = () => {
           principal
         </RoughNotation>
       </Link>
+
       <h2 className="titeleNFP">Página no encontrada</h2>
 
       <p className="notFoundText">
@@ -31,8 +32,9 @@ export const NotFoundPage = () => {
         >
           404
         </RoughNotation>
-        <img className="notFoundImg" src="/medusa_notFound.png" alt="" />
       </p>
+
+      <img className="notFoundImg" src="/medusa_notFound.png" alt="" />
     </section>
   );
 };

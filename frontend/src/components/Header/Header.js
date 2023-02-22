@@ -27,7 +27,7 @@ export const Header = () => {
         alt=""
       />
       <h1 className={header ? "titleHeader active" : "titleHeader"}>
-        <Link className="titleHeader" to="/">
+        <Link className=" Link titleHeader" to="/">
           MEDUSA
         </Link>
       </h1>

@@ -39,9 +39,9 @@ const EditPostPage = () => {
       <h2>¿Qué esta pasando? </h2>
       <section className="creaePostSection">
         <form onSubmit={handleSubmit}>
-          <fieldset className="test">
+          <fieldset className="input">
             <label
-              className={focTitle.focus ? "test focus" : "test"}
+              className={focTitle.focus ? "input focus" : "input"}
               htmlFor="title"
             >
               {focTitle.focus ? (
@@ -72,7 +72,7 @@ const EditPostPage = () => {
           </fieldset>
           <fieldset>
             <label
-              className={focIntroduction.focus ? "test focus" : "test"}
+              className={focIntroduction.focus ? "input focus" : "input"}
               htmlFor="title"
             >
               {focIntroduction.focus ? (
@@ -103,7 +103,7 @@ const EditPostPage = () => {
           </fieldset>
           <fieldset>
             <label
-              className={focText.focus ? "test focus" : "test"}
+              className={focText.focus ? "input focus" : "input"}
               htmlFor="body"
             >
               {focText.focus ? (
@@ -134,7 +134,7 @@ const EditPostPage = () => {
           </fieldset>
           <fieldset>
             <label
-              className={focSubjet.focus ? "test focus" : "test"}
+              className={focSubjet.focus ? "input focus" : "input"}
               htmlFor="subject"
             >
               {focSubjet.focus ? (

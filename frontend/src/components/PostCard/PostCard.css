@@ -1,6 +1,6 @@
 article.postCard {
-  background: white;
-
+  background: #c8d5b9;
+  border: 1px solid #616b56;
   box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.31);
   border-radius: 10px;
 }

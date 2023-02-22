@@ -7,7 +7,7 @@ export const ErrorMessage = ({ message }) => {
       <h2>Error</h2>
       <Link to={"/"}>Go to home</Link>
 
-      <img className="medusaError" src="/medusa.png" alt="" />
+      <img className="medusaError" src="/medusa_notFound.png" alt="" />
       <p className="errorP">{message}</p>
     </section>
   );
