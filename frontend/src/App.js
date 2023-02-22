@@ -10,7 +10,6 @@ import { RegisterPage } from "./pages/RegisterPage";
 import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { UserPage } from "./pages/UserPage";
-import PostList from "./components/PostList/PostList";
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
-      <PostList />
     </main>
   );
 }
