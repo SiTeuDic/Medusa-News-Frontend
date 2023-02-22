@@ -10,6 +10,7 @@ import { RegisterPage } from "./pages/RegisterPage";
 import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { UserPage } from "./pages/UserPage";
+
 import SinglePostPage from "./pages/SinglePostPage";
 import CreatePostPage from "./pages/CreatePostPage";
 import { PostBySubjectPage } from "./pages/PostBySubjectPage";
