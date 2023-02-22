@@ -10,7 +10,12 @@ import { RegisterPage } from "./pages/RegisterPage";
 import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { UserPage } from "./pages/UserPage";
-import PostList from "./components/PostList/PostList";
+
+import SinglePostPage from "./pages/SinglePostPage";
+import CreatePostPage from "./pages/CreatePostPage";
+import { PostBySubjectPage } from "./pages/PostBySubjectPage";
+import EditPostPage from "./pages/EditPostPage";
+import EditProfilePage from "./pages/EditProfilePage";
 
 function App() {
   return (
@@ -22,9 +27,12 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="user/:id" element={<UserPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/new/:id" element={<SinglePostPage />} />
+        <Route path="/createNew" element={<CreatePostPage />} />
+        <Route path="/editNew/:id" element={<EditPostPage />} />
+        <Route path="/:subject" element={<PostBySubjectPage />} />
+        <Route path="/editProfile/:userId" element={<EditProfilePage />} />
       </Routes>
-      <Footer />
-      <PostList />
     </main>
   );
 }

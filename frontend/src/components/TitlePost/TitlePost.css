@@ -1,0 +1,16 @@
+h2.title {
+  font-family: "Merriweather", serif;
+
+  font-size: 25px;
+  margin: 5px 5px;
+  padding: 5px;
+  position: relative;
+  top: 8px;
+  text-align: start;
+  text-decoration: none;
+}
+
+.titleLink {
+  text-decoration: none;
+  color: black;
+}

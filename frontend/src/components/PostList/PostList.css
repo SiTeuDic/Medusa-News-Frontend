@@ -10,3 +10,9 @@ ul {
 li {
   margin-top: 1rem;
 }
+
+@media (min-width: 600px) {
+  main.mainPostList {
+    margin: 0 10px;
+  }
+}

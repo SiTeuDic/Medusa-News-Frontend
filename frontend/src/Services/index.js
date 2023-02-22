@@ -59,3 +59,116 @@ export const getUserDataService = async (id) => {
 
   return json.data;
 };
+
+export const getPostsService = async () => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/`);
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const getSinglePostService = async (id) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/new/${id}`);
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const postNewService = async (data, token) => {
+  console.log("[postNewService]: ", data, token);
+  const formdata = new FormData();
+  formdata.append("title", data.title);
+  formdata.append("introduction", data.introduction);
+  formdata.append("body", data.body);
+  formdata.append("subject", data.subject);
+  formdata.append("image", data.image);
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/`, {
+    method: "POST",
+    body: formdata,
+
+    headers: {
+      Authorization: token,
+    },
+  });
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const upVotePostService = async (id, token) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${id}/up`, {
+    method: "PUT",
+    headers: {
+      Authorization: token,
+      "Content-Type": "application/json",
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const downVotePostService = async (id, token) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${id}/down`, {
+    method: "PUT",
+    headers: {
+      Authorization: token,
+      "Content-Type": "application/json",
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const getPostsBySubjectService = async (subject) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${subject}`);
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const checkVoteUserServer = async (postId, userId) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/infoVotes/${postId}/${userId}`
+  );
+  const json = await response.json();
+
+  return json;
+};
+
+export const getPostByUser = async (userId) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/newUser/${userId}`
+  );
+  const json = await response.json();
+
+  return json;
+};

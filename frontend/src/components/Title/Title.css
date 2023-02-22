@@ -1,8 +1,7 @@
-h2.title {
-  font-size: 20px;
-  margin: 5px 5px;
-  padding: 5px;
-  position: relative;
-  top: 8px;
-  text-align: start;
+h2 {
+  margin-top: 1rem;
+  font-family: "Merriweather", serif;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
 }

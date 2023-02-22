@@ -3,7 +3,8 @@ img.imgPost {
   height: 6rem;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.319);
+  border: 1px solid black;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.348);
   margin: 20px;
   float: right;
 }
