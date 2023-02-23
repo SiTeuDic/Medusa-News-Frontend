@@ -8,22 +8,27 @@ import Title from "../components/Title/Title";
 import { RoughNotation } from "react-rough-notation";
 import useFocus from "../hooks/useFocus";
 import { useState } from "react";
+
 export const EditProfilePage = () => {
   const { userId } = useParams();
   const { user, loading, error } = useUser(userId);
   console.log(user);
   const focBio = useFocus();
   const focName = useFocus();
+  const focPassword = useFocus();
+  const focConfirmPassword = useFocus();
 
   const [curentName, setCurrentName] = useState(user.name);
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   // console.log("[CurrentUSer]: ", currentUser.user.id);
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <section className="userSection">
+    <section className="formSection">
       <form>
-        <ul className="userSection">
+        <ul>
           <li>
             <Title text={user.user_name} />
           </li>
@@ -44,7 +49,7 @@ export const EditProfilePage = () => {
                   <img
                     className="avatarUser"
                     src="/medusaUser.png"
-                    alt=" medusaAvarat"
+                    alt="medusaAvatar"
                   />
                 )}
                 <input className="imageInput" name="image" type="file" />
@@ -117,7 +122,73 @@ export const EditProfilePage = () => {
             </fieldset>
           </li>
           <li>
-            <button>Enviar</button>
+            <fieldset>
+              <label
+                className={focPassword.focus ? "input focus" : "input"}
+                htmlFor="newPassword"
+              >
+                {focPassword.focus ? (
+                  <RoughNotation
+                    show={true}
+                    type="underline"
+                    padding={[-2, -2]}
+                    strokeWidth="2"
+                    animationDelay={500}
+                    animationDuration={300}
+                  >
+                    Contraseña
+                  </RoughNotation>
+                ) : (
+                  "Contraseña"
+                )}
+              </label>
+              <input
+                className="post"
+                type="password"
+                name="newPassword"
+                id="newPassword"
+                onFocus={focPassword.onFocus}
+                onBlur={focPassword.onBlur}
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <label
+                className={focConfirmPassword.focus ? "input focus" : "input"}
+                htmlFor="confirmPassword"
+              >
+                {focConfirmPassword.focus ? (
+                  <RoughNotation
+                    show={true}
+                    type="underline"
+                    padding={[-2, -2]}
+                    strokeWidth="2"
+                    animationDelay={500}
+                    animationDuration={300}
+                  >
+                    Repítela
+                  </RoughNotation>
+                ) : (
+                  "Repítela"
+                )}
+              </label>
+              <input
+                className="post"
+                value={confirmPassword}
+                type="password"
+                name="confirmsPassword"
+                id="confirmPassword"
+                onFocus={focConfirmPassword.onFocus}
+                onBlur={focConfirmPassword.onBlur}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </fieldset>
+          </li>
+          <li>
+            <button className="postButton">Enviar</button>
           </li>
         </ul>
       </form>

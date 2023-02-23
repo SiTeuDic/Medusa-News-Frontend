@@ -13,6 +13,7 @@ const useUser = (id) => {
         const data = await getUserDataService(id);
 
         setUser(data);
+        //console.log(data);
       } catch (error) {
         setError(error.message);
       } finally {

@@ -39,8 +39,9 @@ const useVote = (idPost, vote) => {
         setBtnActive(true);
       }
     };
-
-    getcheckvotes();
+    if (user) {
+      getcheckvotes();
+    }
   }, [idPost, user]);
   //si el id de del user esta en los votos de la noticia, poner el estado a activo
 
