@@ -1,8 +1,11 @@
-import { RoughNotation } from "react-rough-notation";
 import { VscCloudUpload } from "react-icons/vsc";
+
 import useFocus from "../../hooks/useFocus";
 import useSendPost from "../../hooks/useSendPost";
 import "./CreatePost.css";
+
+import TextFocus from "../TextFocus/TextFocus";
+
 const CreatePost = () => {
   const { post, handleChange, handleSubmit, handleFile, imagePreview } =
     useSendPost();
@@ -11,6 +14,7 @@ const CreatePost = () => {
   const focIntroduction = useFocus();
   const focText = useFocus();
   const focSubjet = useFocus();
+
   return (
     <section className="formSection">
       <form onSubmit={handleSubmit}>
@@ -19,20 +23,7 @@ const CreatePost = () => {
             className={focTitle.focus ? "input focus" : "input"}
             htmlFor="title"
           >
-            {focTitle.focus ? (
-              <RoughNotation
-                show={true}
-                type="underline"
-                padding={[-2, -2]}
-                strokeWidth="2"
-                animationDelay={500}
-                animationDuration={300}
-              >
-                Titulo
-              </RoughNotation>
-            ) : (
-              "Titulo"
-            )}
+            <TextFocus text={"Titulo"} state={focTitle.focus} />
           </label>
           <input
             value={post.title}
@@ -50,20 +41,7 @@ const CreatePost = () => {
             className={focIntroduction.focus ? "input focus" : "input"}
             htmlFor="title"
           >
-            {focIntroduction.focus ? (
-              <RoughNotation
-                show={true}
-                type="underline"
-                padding={[-2, -2]}
-                strokeWidth="2"
-                animationDelay={500}
-                animationDuration={300}
-              >
-                Introducción
-              </RoughNotation>
-            ) : (
-              "Introducción"
-            )}
+            <TextFocus text="Introducción" state={focIntroduction.focus} />
           </label>
           <input
             value={post.introduction}
@@ -81,20 +59,7 @@ const CreatePost = () => {
             className={focText.focus ? "input focus" : "input"}
             htmlFor="body"
           >
-            {focText.focus ? (
-              <RoughNotation
-                show={true}
-                type="underline"
-                padding={[-2, -2]}
-                strokeWidth="2"
-                animationDelay={500}
-                animationDuration={300}
-              >
-                Texto
-              </RoughNotation>
-            ) : (
-              "Texto"
-            )}
+            <TextFocus text="Texto" state={focText.focus} />
           </label>
           <textarea
             value={post.body}
@@ -112,20 +77,7 @@ const CreatePost = () => {
             className={focSubjet.focus ? "input focus" : "input"}
             htmlFor="subject"
           >
-            {focSubjet.focus ? (
-              <RoughNotation
-                show={true}
-                type="underline"
-                padding={[-2, -2]}
-                strokeWidth="2"
-                animationDelay={500}
-                animationDuration={300}
-              >
-                Tema
-              </RoughNotation>
-            ) : (
-              "Tema"
-            )}
+            <TextFocus text="Tema" state={focSubjet.focus} />
           </label>
           <input
             value={post.subject}

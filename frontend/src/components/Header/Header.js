@@ -7,7 +7,7 @@ export const Header = () => {
   const [header, setHeader] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 170) {
+    if (window.scrollY >= 170) {
       setHeader(true);
     } else {
       setHeader(false);

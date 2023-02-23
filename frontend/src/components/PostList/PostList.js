@@ -6,7 +6,6 @@ import "./PostList.css";
 
 const PostList = ({ subject, userId }) => {
   const { posts, error, loading } = usePosts(subject, userId);
-  console.log("[PostList]:", posts);
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
   return (

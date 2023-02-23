@@ -3,7 +3,7 @@ import "./Subject.css";
 
 const Subject = ({ subject }) => {
   return (
-    <Link to={`/${subject}`}>
+    <Link to={`/subject/${subject}`}>
       <span className="subject">{subject}</span>
     </Link>
   );

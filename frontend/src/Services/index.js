@@ -144,7 +144,9 @@ export const downVotePostService = async (id, token) => {
 };
 
 export const getPostsBySubjectService = async (subject) => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}/${subject}`);
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/subject/${subject}`
+  );
 
   const json = await response.json();
 
