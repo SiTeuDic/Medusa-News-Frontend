@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { RoughNotation } from "react-rough-notation";
-
 import { useNavigate } from "react-router-dom";
-import Title from "../components/Title/Title";
+
 import { AuthContext } from "../context/AuthContext";
-import useFocus from "../hooks/useFocus";
 import { logInUserService } from "../Services";
+import useFocus from "../hooks/useFocus";
+
+import TextFocus from "../components/TextFocus/TextFocus";
+import Title from "../components/Title/Title";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
   const focEmail = useFocus();
   const focPass = useFocus();
 
@@ -39,20 +41,7 @@ export const LoginPage = () => {
               htmlFor="email"
               className={focEmail.focus ? "input focus" : "input"}
             >
-              {focEmail.focus ? (
-                <RoughNotation
-                  show={true}
-                  type="underline"
-                  padding={[-2, -2]}
-                  strokeWidth="2"
-                  animationDelay={500}
-                  animationDuration={300}
-                >
-                  Email
-                </RoughNotation>
-              ) : (
-                "Email"
-              )}
+              <TextFocus text="Email" state={focEmail.focus} />
             </label>
             <input
               className="post"
@@ -71,20 +60,7 @@ export const LoginPage = () => {
               className={focPass.focus ? "input focus" : "input"}
               htmlFor="pass"
             >
-              {focPass.focus ? (
-                <RoughNotation
-                  show={true}
-                  type="underline"
-                  padding={[-2, -2]}
-                  strokeWidth="2"
-                  animationDelay={500}
-                  animationDuration={300}
-                >
-                  Password
-                </RoughNotation>
-              ) : (
-                "Password"
-              )}
+              <TextFocus text="Password" state={focPass.focus} />
             </label>
             <input
               className="post"

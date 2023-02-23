@@ -1,14 +1,26 @@
 import "./ErrorMessage.css";
-import { Link } from "react-router-dom";
+import { RoughNotation } from "react-rough-notation";
 
 export const ErrorMessage = ({ message }) => {
   return (
     <section className="errorSection">
-      <h2>Error</h2>
-      <Link to={"/"}>Go to home</Link>
+      <p className="errorP">{message}</p>
+      <p className="notFoundText">
+        <RoughNotation
+          type="circle"
+          show={true}
+          color="black"
+          strokeWidth={"1.5"}
+          animationDelay={1000}
+          animationDuration={"700"}
+          iterations="3"
+          padding={[2, 10]}
+        >
+          Error
+        </RoughNotation>
+      </p>
 
       <img className="medusaError" src="/medusa_notFound.png" alt="" />
-      <p className="errorP">{message}</p>
     </section>
   );
 };

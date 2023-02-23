@@ -30,8 +30,13 @@ function App() {
         <Route path="/new/:id" element={<SinglePostPage />} />
         <Route path="/createNew" element={<CreatePostPage />} />
         <Route path="/editNew/:id" element={<EditPostPage />} />
-        <Route path="/:subject" element={<PostBySubjectPage />} />
+
+        <Route path="/subject/:subject" element={<PostBySubjectPage />} />
+        <Route path="/editProfile/:userId" element={<EditProfilePage />} />
+
+        
         <Route path="*" element={<NotFoundPage />} />
+
       </Routes>
     </main>
   );
