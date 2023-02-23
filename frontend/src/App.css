@@ -133,7 +133,7 @@ ul.userSection {
 }
 
 li.avatarUserli {
-  align-self: center;
+  margin: 10px auto;
   border: 4px solid black;
   border-radius: 50%;
   width: 10rem;
@@ -142,7 +142,7 @@ li.avatarUserli {
   background-color: rgb(182, 178, 178);
 }
 
-.avatarUserDefaul {
+.avatarUserDefault {
   object-fit: cover;
   width: 10rem;
   height: 10rem;
@@ -180,9 +180,9 @@ li.editProfile {
 
 .editImgIcon {
   position: absolute;
-  top: 13rem;
+  top: 14.1rem;
   right: 9rem;
   font-size: 5rem;
-  opacity: 60%;
-  z-index: 1;
+  opacity: 25%;
+  z-index: 0;
 }

@@ -4,6 +4,7 @@ import { registerUserService } from "../Services";
 import Title from "../components/Title/Title";
 import useFocus from "../hooks/useFocus";
 import { RoughNotation } from "react-rough-notation";
+
 export const RegisterPage = () => {
   const navigate = useNavigate();
 

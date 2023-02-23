@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Auth } from "../Auth/Auth";
 import "./Header.css";
@@ -6,15 +6,21 @@ import "./Header.css";
 export const Header = () => {
   const [header, setHeader] = useState(false);
 
-  const handleScroll = () => {
-    if (window.scrollY > 170) {
-      setHeader(true);
-    } else {
-      setHeader(false);
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 250 && !header) {
+        setHeader(true);
+      } else if (window.scrollY <= 250 && header) {
+        setHeader(false);
+      }
+    };
 
-  window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [header]);
 
   return (
     <header
@@ -23,7 +29,7 @@ export const Header = () => {
     >
       <img
         className={header ? "imgHeader active" : "imgHeader"}
-        src="medusa.png"
+        src="/medusa.png"
         alt=""
       />
       <h1 className={header ? "titleHeader active" : "titleHeader"}>

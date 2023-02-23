@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage/ErrorMessage";
 import { Loading } from "../components/Loading/Loading";
+import { Name } from "../components/Name/Name";
 import useUser from "../hooks/useUser";
 import PostList from "../components/PostList/PostList";
 import { BiEdit } from "react-icons/bi/index";
@@ -11,17 +12,17 @@ import { AuthContext } from "../context/AuthContext";
 
 export const UserPage = () => {
   const { id } = useParams();
-  const { user, loading, error } = useUser(id);
+  const userId = id ? parseInt(id) : null;
+  const { user, loading, error } = useUser(userId);
   const currentUser = useContext(AuthContext);
 
-  // console.log("[CurrentUSer]: ", currentUser.user.id);
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
 
   return (
     <section className="userSection">
       <ul className="userSection">
-        {currentUser.user.id === parseInt(id) ? (
+        {currentUser.user && currentUser.user.id === userId && (
           <li className="editProfile">
             <Link
               className="editProfile"
@@ -30,8 +31,6 @@ export const UserPage = () => {
               <BiEdit />
             </Link>
           </li>
-        ) : (
-          ""
         )}
         <li>
           <Title text={user.user_name} />

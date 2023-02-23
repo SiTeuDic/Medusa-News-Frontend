@@ -16,9 +16,7 @@ export const NotFoundPage = () => {
           principal
         </RoughNotation>
       </Link>
-
       <h2 className="titeleNFP">Página no encontrada</h2>
-
       <p className="notFoundText">
         <RoughNotation
           type="circle"
@@ -33,7 +31,6 @@ export const NotFoundPage = () => {
           404
         </RoughNotation>
       </p>
-
       <img className="notFoundImg" src="/medusa_notFound.png" alt="" />
     </section>
   );

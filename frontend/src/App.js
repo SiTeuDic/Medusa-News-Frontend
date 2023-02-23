@@ -26,12 +26,12 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="user/:id" element={<UserPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/editProfile/:userId" element={<EditProfilePage />} />
         <Route path="/new/:id" element={<SinglePostPage />} />
         <Route path="/createNew" element={<CreatePostPage />} />
         <Route path="/editNew/:id" element={<EditPostPage />} />
         <Route path="/:subject" element={<PostBySubjectPage />} />
-        <Route path="/editProfile/:userId" element={<EditProfilePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </main>
   );
