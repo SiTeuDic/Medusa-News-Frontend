@@ -1,9 +1,11 @@
 import PostList from "../components/PostList/PostList";
+import Title from "../components/Title/Title";
 
 export const HomePage = () => {
   return (
     <section>
-      <h1>Noticias</h1>
+      <Title text={"Noticias"} />
+
       <PostList />
     </section>
   );

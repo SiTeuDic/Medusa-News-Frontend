@@ -1,30 +1,28 @@
-import useFetch from "../../hooks/useFetch";
+import usePosts from "../../hooks/usePost";
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
+import { Loading } from "../Loading/Loading";
 import PostCard from "../PostCard/PostCard";
 import "./PostList.css";
 
-const PostList = () => {
-  const data = useFetch("http://127.0.0.1:8888/");
-
+const PostList = ({ subject, userId }) => {
+  const { posts, error, loading } = usePosts(subject, userId);
+  console.log("[PostList]:", posts);
+  if (loading) return <Loading />;
+  if (error) return <ErrorMessage message={error} />;
   return (
-    <main className="mainPostList">
-      <ul>
-        {data &&
-          data.data.map((post) => {
+    posts && (
+      <main className="mainPostList">
+        <ul>
+          {posts.map((post) => {
             return (
               <li key={post.id}>
-                <PostCard
-                  title={post.title}
-                  introduction={post.introduction}
-                  image={post.image}
-                  body={post.body}
-                  subject={post.subject}
-                  vote={post.upVote}
-                />
+                <PostCard post={post} />
               </li>
             );
           })}
-      </ul>
-    </main>
+        </ul>
+      </main>
+    )
   );
 };
 

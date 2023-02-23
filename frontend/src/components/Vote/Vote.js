@@ -1,18 +1,27 @@
 import "./Vote.css";
+import useVote from "../../hooks/useVote";
+import { GiJellyfish } from "react-icons/gi";
 
-const Vote = ({ vote }) => {
+const Vote = ({ vote, id }) => {
+  const { user, handleLikeClick, upVote, btnActive } = useVote(id, vote);
+
   return (
-    <ul className="listVote">
-      <li className="elementlist">
-        <p className="vote">+</p>
-      </li>
-      <li className="elementlist">
-        <p className="vote">-</p>
-      </li>
-      <li className="elementlist">
-        <p className="voteNum">{vote}</p>
-      </li>
-    </ul>
+    <span className="listVote">
+      {user ? (
+        <p
+          className={btnActive ? "buttonVote active" : "buttonVote"}
+          onClick={handleLikeClick}
+        >
+          <GiJellyfish />
+        </p>
+      ) : (
+        <p className="buttonVote blur">
+          <GiJellyfish />
+        </p>
+      )}
+
+      <p className="vote">{upVote} </p>
+    </span>
   );
 };
 

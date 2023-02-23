@@ -1,23 +1,34 @@
 import Body from "../Body/Body";
 import Subject from "../Subject/Subject";
-import Title from "../Title/Title";
+import TitlePost from "../TitlePost/TitlePost";
 import Vote from "../Vote/Vote";
-import Image from "../Image/Image";
+import ImagePost from "../ImagePost/ImagePost";
 import "./PostCard.css";
+import Published from "../Published/Published";
 
-const PostCard = ({ title, body, vote, subject }) => {
+const PostCard = ({ post }) => {
+  console.log(post);
   return (
     <article className="postCard">
-      <Subject subject={subject} />
-      <p className="publicado">
-        Publicado hace 2 horas por <b>Nacho</b>
-      </p>
-      <Image />
-      <Title title={title} />
-      <Body body={body} />
-      <Vote vote={vote} />
+      <Subject subject={post.subject} />
+      <Published userId={post.user_id} date={post.create_date} />
+      {post.image && <ImagePost imgName={post.image} title={post.title} />}
+      <TitlePost title={post.title} id={post.id} />
+      <Body body={post.body} />
+      <Vote vote={post.upVote} id={post.id} />
     </article>
   );
 };
 
 export default PostCard;
+
+/* return (
+  <article className="postCard">
+    <Subject subject={post.subject} />
+    <Published userId={post.userId} date={post.create_date} />
+    {post.imgName && <ImagePost imgName={post.imgName} title={post.title} />}
+    <Title title={post.title} id={post.id} />
+    <Body body={post.body} />
+    <Vote vote={post.vote} id={post.id} />
+  </article>
+); */

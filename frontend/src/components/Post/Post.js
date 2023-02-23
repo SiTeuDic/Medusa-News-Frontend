@@ -1,35 +1,32 @@
-import { useEffect, useState } from "react";
 import Body from "../Body/Body";
-import Image from "../Image/Image";
+import ImagePost from "../ImagePost/ImagePost";
 import Introduction from "../Introduction/Introduction";
+import Published from "../Published/Published";
 import Subject from "../Subject/Subject";
-import Title from "../Title/Title";
+import Title from "../TitlePost/TitlePost";
 import Vote from "../Vote/Vote";
 import "./Post.css";
 
-const Post = () => {
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch("http://127.0.0.1:8888/new/1");
-      const value = await res.json();
-
-      setData(value.data);
-    };
-
-    getData();
-  }, []);
-
-  console.log(data);
+const Post = ({
+  title,
+  introduction,
+  imgName,
+  body,
+  subject,
+  upVote,
+  id,
+  userId,
+  date,
+}) => {
   return (
     <article className="post-article">
-      <Title title={data.title} />
-      <Introduction introduction={data.introduction} />
-      <Image image={data.image} />
-      <Body body={data.body} />
-      <Subject subject={data.subject} />
-      <Vote vote={data.upVote} />
+      <Subject subject={subject} />
+      <Published userId={userId} date={date} />
+      <Title title={title} id={id} />
+      <Introduction introduction={introduction} />
+      {imgName && <ImagePost imgName={imgName} />}
+      <Body body={body} />
+      <Vote vote={upVote} />
     </article>
   );
 };

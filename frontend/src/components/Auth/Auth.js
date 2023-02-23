@@ -1,23 +1,18 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import { GiHamburgerMenu } from "react-icons/gi";
+import "./Auth.css";
+import NavMenu from "../NavMenu/NavMenu";
+import { useState } from "react";
 
 export const Auth = () => {
-  const { user, logout } = useContext(AuthContext);
-
-  return user ? (
+  const [menu, setMenu] = useState(false);
+  return (
     <section>
-      Logueado como <Link to={`/user/${user.id}`}>{user.user_name}</Link>{" "}
-      <button onClick={() => logout()}>Logout</button>
+      <GiHamburgerMenu onClick={() => setMenu(!menu)} />
+      {menu && (
+        <div className="containerNav" onClick={() => setMenu(!menu)}>
+          <NavMenu />
+        </div>
+      )}
     </section>
-  ) : (
-    <ul>
-      <li>
-        <Link to={"/register"}>Register</Link>
-      </li>
-      <li>
-        <Link to={"/login"}>Login</Link>
-      </li>
-    </ul>
   );
 };
