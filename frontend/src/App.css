@@ -99,7 +99,7 @@ input.post:focus,
 textarea.post:focus {
   transform: scale(1);
 
-  transition: all 0.2s linear 0.2s;
+  transition: scale 0.2s linear 0.2s;
 
   border: 1.5px solid black;
   padding: 0.7rem;
@@ -107,7 +107,7 @@ textarea.post:focus {
 
 label.focus {
   font-size: 1.3rem;
-  transition: all 0.2s linear 0.2s;
+  transition: 0.2s linear 0.2s;
   z-index: 1;
 }
 
@@ -121,6 +121,13 @@ button.postButton {
 
   padding: 0.5rem;
   margin: auto;
+}
+
+@media (min-width: 600px) {
+  section.formSection {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 
 /* userPage */
@@ -194,4 +201,16 @@ li.editProfile {
   position: absolute;
   bottom: 3rem;
   left: 0;
+}
+
+/* ////// SINGLE POST PAGE////// */
+
+article.post-article {
+  margin: 10px 5px;
+}
+
+@media (min-width: 600px) {
+  article.post-article {
+    margin: 0 10px;
+  }
 }

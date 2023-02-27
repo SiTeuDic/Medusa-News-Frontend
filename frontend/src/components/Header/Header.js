@@ -8,9 +8,9 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 250 && !header) {
+      if (window.scrollY >= 250) {
         setHeader(true);
-      } else if (window.scrollY <= 250 && header) {
+      } else if (window.scrollY <= 250) {
         setHeader(false);
       }
     };
@@ -27,11 +27,13 @@ export const Header = () => {
       className={header ? "mainHeader active" : "mainHeader"}
       style={{ backgroundImage: " url(/door.jpg)" }}
     >
-      <img
-        className={header ? "imgHeader active" : "imgHeader"}
-        src="/medusa.png"
-        alt=""
-      />
+      <span>
+        <img
+          className={header ? "imgHeader active" : "imgHeader"}
+          src="/medusa.png"
+          alt=""
+        />
+      </span>
       <h1 className={header ? "titleHeader active" : "titleHeader"}>
         <Link className=" Link titleHeader" to="/">
           MEDUSA

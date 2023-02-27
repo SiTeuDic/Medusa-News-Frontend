@@ -9,7 +9,7 @@ const Title = ({ text }) => {
       iterations={3}
       padding={[4, 0]}
     >
-      <h2>{text}</h2>
+      <h2>{text.toUpperCase()}</h2>
     </RoughNotation>
   );
 };
