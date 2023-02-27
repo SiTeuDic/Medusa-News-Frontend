@@ -45,7 +45,7 @@ const useVote = (idPost, vote) => {
   }, [idPost, user]);
   //si el id de del user esta en los votos de la noticia, poner el estado a activo
 
-  //ids de usuarios que,  botaron la noticia
+  //ids de usuarios que, votaron la noticia
 
   return {
     user,

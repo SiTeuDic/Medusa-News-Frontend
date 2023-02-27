@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
-import { Footer } from "./components/Footer/Footer";
+//import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 
 import { HomePage } from "./pages/HomePage";
@@ -30,13 +30,8 @@ function App() {
         <Route path="/new/:id" element={<SinglePostPage />} />
         <Route path="/createNew" element={<CreatePostPage />} />
         <Route path="/editNew/:id" element={<EditPostPage />} />
-
         <Route path="/subject/:subject" element={<PostBySubjectPage />} />
-        <Route path="/editProfile/:userId" element={<EditProfilePage />} />
-
-        
         <Route path="*" element={<NotFoundPage />} />
-
       </Routes>
     </main>
   );

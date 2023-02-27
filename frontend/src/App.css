@@ -64,7 +64,7 @@ section.formSection {
 
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start; /* cambiado por warning start por flex-start */
 
   margin-top: 20px;
   margin-left: 5%;
