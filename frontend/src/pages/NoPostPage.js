@@ -5,7 +5,7 @@ export const NoPostPage = () => {
   return (
     <section className="notFoundSection">
       <Link to="/createNew" className="notFoundLink">
-        {"Sé el primero en "}
+        {"Crea una "}
         <RoughNotation
           strokeWidth={"2"}
           show={true}
@@ -13,7 +13,7 @@ export const NoPostPage = () => {
           padding={[1, 0]}
           color="black"
         >
-          Publicar
+          Publicación
         </RoughNotation>
       </Link>
       <h2 className="titeleNFP notFoundText">

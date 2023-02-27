@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 const NavMenu = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const { user, logout } = useContext(AuthContext);
 
   return (

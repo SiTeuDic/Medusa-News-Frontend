@@ -7,7 +7,7 @@ import { GrEdit } from "react-icons/gr/index";
 import Title from "../components/Title/Title";
 import { RoughNotation } from "react-rough-notation";
 import useFocus from "../hooks/useFocus";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { updateProfileService } from "../Services";
 import { AuthContext } from "../context/AuthContext";
 
@@ -24,10 +24,20 @@ export const EditProfilePage = () => {
 
   const [currentName, setCurrentName] = useState(user.name);
   const [bio, setBio] = useState(user.bio);
+  const [error1, setError1] = useState("");
+
+  useEffect(() => {
+    if (user) {
+      setCurrentName(user.name);
+      setBio(user.bio);
+    }
+  }, [user]);
+
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [image, setImage] = useState(user.profile_image);
   // console.log("[CurrentUSer]: ", currentUser.user.id);
+
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
 
@@ -44,8 +54,8 @@ export const EditProfilePage = () => {
         token
       );
       navigate(`/user/${user.id}`);
-    } catch (error) {
-      <ErrorMessage message={error} />;
+    } catch (error1) {
+      setError1(error1.message);
     }
   };
 
@@ -227,6 +237,7 @@ export const EditProfilePage = () => {
             <button className="postButton">Enviar</button>
           </li>
         </ul>
+        {error ? <p>{error1}</p> : null}
       </form>
     </section>
   );
