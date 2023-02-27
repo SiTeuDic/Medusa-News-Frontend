@@ -20,7 +20,6 @@ export const LoginPage = () => {
 
   const handleForm = async (e) => {
     e.preventDefault();
-
     try {
       const token = await logInUserService({ email, password });
       console.log(token);
@@ -30,6 +29,7 @@ export const LoginPage = () => {
       setError(error.message);
     }
   };
+
   return (
     <section>
       <Title text="LogIn" />

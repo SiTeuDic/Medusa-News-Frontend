@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage/ErrorMessage";
 import { Loading } from "../components/Loading/Loading";
-import { Name } from "../components/Name/Name";
+//import { Name } from "../components/Name/Name";
 import useUser from "../hooks/useUser";
 import PostList from "../components/PostList/PostList";
 import { BiEdit } from "react-icons/bi/index";
