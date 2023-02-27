@@ -186,3 +186,12 @@ li.editProfile {
   opacity: 25%;
   z-index: 0;
 }
+
+.testSpan {
+  width: 100%;
+  height: 2rem;
+
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+}
