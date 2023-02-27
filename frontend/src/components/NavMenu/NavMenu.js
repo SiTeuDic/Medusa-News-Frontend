@@ -36,15 +36,15 @@ const NavMenu = () => {
             </Link>
           </li>
           <li className="menuLi">
-            <p
-              className="userMenuL"
+            <Link
+              className="Link"
+              to={"/"}
               onClick={() => {
                 logout();
-                navigate("/");
               }}
             >
               LogOut
-            </p>
+            </Link>
           </li>
         </ul>
       ) : (

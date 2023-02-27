@@ -7,6 +7,8 @@ header.mainHeader {
   align-items: center;
   justify-content: center;
 
+  height: 6rem;
+
   position: sticky;
   top: -1px;
   z-index: 1;
@@ -49,7 +51,6 @@ header.mainHeader.active {
 img.imgHeader.active {
   width: 2rem;
   transform: scale(0);
-  transition: all 0.5s;
 }
 
 h1.titleHeader.active {
@@ -67,10 +68,14 @@ nav.authNav.active {
 /* /////MEDIA///// */
 
 @media (min-width: 600px) {
+  header.mainHeader.active {
+    height: 5rem;
+  }
+
   header.mainHeader {
     background-size: cover;
     background-position-y: top;
-
+    height: 10rem;
     display: flex;
 
     align-items: center;
