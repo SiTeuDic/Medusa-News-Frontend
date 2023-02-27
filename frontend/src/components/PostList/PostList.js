@@ -1,4 +1,5 @@
 import usePosts from "../../hooks/usePost";
+import { NoPostPage } from "../../pages/NoPostPage";
 import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
 import { Loading } from "../Loading/Loading";
 import PostCard from "../PostCard/PostCard";
@@ -8,6 +9,8 @@ const PostList = ({ subject, userId }) => {
   const { posts, error, loading } = usePosts(subject, userId);
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
+  if (!posts.length) return <NoPostPage />;
+
   return (
     posts && (
       <main className="mainPostList">

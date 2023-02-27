@@ -23,7 +23,7 @@ export const LoginPage = () => {
 
     try {
       const token = await logInUserService({ email, password });
-
+      console.log(token);
       login(token);
       navigate("/");
     } catch (error) {

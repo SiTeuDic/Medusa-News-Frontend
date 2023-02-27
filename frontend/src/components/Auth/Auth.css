@@ -40,7 +40,7 @@ span.avatarSpan {
 }
 
 img.avatarAth {
-  object-fit: contain;
+  object-fit: cover;
   width: 2rem;
   height: 2rem;
 }

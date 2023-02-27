@@ -13,10 +13,10 @@ const NavMenu = () => {
           <li className="menuLi">
             <Link className="Link" to={`/user/${user.id}`}>
               <span className="avatarSpan">
-                {user.avatar ? (
+                {user.profile_image ? (
                   <img
                     className="avatarAth"
-                    src={`${process.env.REACT_APP_BACKEND}/uploads/profileImages/${user.avatar}`}
+                    src={`${process.env.REACT_APP_BACKEND}/uploads/profileImages/${user.profile_image}`}
                     alt="imagen de usuario"
                   />
                 ) : (

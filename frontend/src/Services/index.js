@@ -174,3 +174,39 @@ export const getPostByUser = async (userId) => {
 
   return json;
 };
+
+export const updateProfileService = async (
+  userId,
+  name,
+  bio,
+  image,
+  newPassword,
+  confirmPassword,
+  token
+) => {
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("bio", bio);
+  formData.append("image", image);
+  formData.append("password1", newPassword);
+  formData.append("password2", confirmPassword);
+
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/editProfile/${userId}`,
+    {
+      method: "PUT",
+      body: formData,
+      headers: {
+        authorization: token,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message);
+  }
+
+  const responseData = await response.json();
+  return responseData.data;
+};
