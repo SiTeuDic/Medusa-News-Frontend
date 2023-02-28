@@ -36,6 +36,7 @@ export const EditProfilePage = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [image, setImage] = useState(user.profile_image);
+  const [imageUrl, setImageUrl] = useState("");
   // console.log("[CurrentUSer]: ", currentUser.user.id);
 
   if (loading) return <Loading />;
@@ -62,6 +63,11 @@ export const EditProfilePage = () => {
   const handleFile = (e) => {
     const file = e.target.files[0];
     setImage(file);
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImageUrl(reader.result);
+    };
+    reader.readAsDataURL(file);
   };
 
   console.log(currentName, bio, newPassword, confirmPassword);
@@ -77,7 +83,13 @@ export const EditProfilePage = () => {
             <fieldset className="inpFieldset">
               <label>
                 <GrEdit className="editImgIcon" />
-                {user.profile_image ? (
+                {imageUrl ? (
+                  <img
+                    className="avatarUser"
+                    src={imageUrl}
+                    alt="Imagen de usuario"
+                  />
+                ) : user.profile_image ? (
                   <>
                     <img
                       className="avatarUser"

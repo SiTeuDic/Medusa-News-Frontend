@@ -51,9 +51,9 @@ export const UserPage = () => {
           )}
         </li>
         {user.name && <li>{user.name}</li>}
-        <li>
+        {/* <li>
           <p>Biografía</p>
-        </li>
+        </li> */}
         <li>
           <p className="biografiaP">{user.bio}</p>
         </li>
