@@ -5,9 +5,14 @@ import Vote from "../Vote/Vote";
 import ImagePost from "../ImagePost/ImagePost";
 import "./PostCard.css";
 import Published from "../Published/Published";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import GrEdit from "react-icons/gr/index";
 
 const PostCard = ({ post }) => {
-  console.log(post);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   return (
     <article className="postCard">
       <Subject subject={post.subject} />
@@ -16,6 +21,14 @@ const PostCard = ({ post }) => {
       <TitlePost title={post.title} id={post.id} />
       <Body body={post.body} />
       <Vote vote={post.upVote} id={post.id} />
+      {/* {user.id && (
+        <span
+          className="editSpan"
+          onClick={() => navigate(`/editNew/${post.id}`)}
+        >
+          <GrEdit />
+        </span>
+      )} */}
     </article>
   );
 };
