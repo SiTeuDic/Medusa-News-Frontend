@@ -82,12 +82,12 @@ const CreatePost = () => {
           <input
             value={post.subject}
             type="text"
-            onChange={handleChange}
             className="post"
             id="subject"
             name="subject"
             onFocus={focSubjet.onFocus}
             onBlur={focSubjet.onBlur}
+            onChange={handleChange}
           />
         </fieldset>
 

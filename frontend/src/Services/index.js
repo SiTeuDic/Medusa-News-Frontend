@@ -83,7 +83,6 @@ export const getSinglePostService = async (id) => {
 };
 
 export const postNewService = async (data, token) => {
-  console.log("[postNewService]: ", data, token);
   const formdata = new FormData();
   formdata.append("title", data.title);
   formdata.append("introduction", data.introduction);
@@ -92,6 +91,30 @@ export const postNewService = async (data, token) => {
   formdata.append("image", data.image);
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/`, {
     method: "POST",
+    body: formdata,
+
+    headers: {
+      Authorization: token,
+    },
+  });
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const EditPostService = async (data, token, id) => {
+  const formdata = new FormData();
+  formdata.append("title", data.title);
+  formdata.append("introduction", data.introduction);
+  formdata.append("body", data.body);
+  formdata.append("subject", data.subject);
+  formdata.append("image", data.image);
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/new/${id}`, {
+    method: "PUT",
     body: formdata,
 
     headers: {

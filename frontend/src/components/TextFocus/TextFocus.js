@@ -1,7 +1,6 @@
 import { RoughNotation } from "react-rough-notation";
 
 const TextFocus = ({ text, state }) => {
-  console.log(text);
   return (
     <>
       {state ? (
