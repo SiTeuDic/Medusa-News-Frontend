@@ -22,7 +22,9 @@ export const UserPage = () => {
   return (
     <section className="userSection">
       <ul className="userSection">
-        {currentUser.user && currentUser.user.id === userId && (
+        {/* TODO: compobar que funciona SIEMPRE*/}
+
+        {currentUser.user?.id === userId && (
           <li className="editProfile">
             <Link
               className="editProfile"
