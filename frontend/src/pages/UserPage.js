@@ -51,12 +51,11 @@ export const UserPage = () => {
           )}
         </li>
         {user.name && <li>{user.name}</li>}
-        {/* <li>
-          <p>Biografía</p>
-        </li> */}
-        <li>
-          <p className="biografiaP">{user.bio}</p>
-        </li>
+        {user.bio && (
+          <li>
+            <p className="biografiaP">{user.bio}</p>
+          </li>
+        )}
         <li>
           <RegistredAt date={user.created_at} />
         </li>

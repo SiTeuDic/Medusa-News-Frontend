@@ -4,9 +4,11 @@ import { registerUserService } from "../Services";
 import Title from "../components/Title/Title";
 import useFocus from "../hooks/useFocus";
 import { RoughNotation } from "react-rough-notation";
+import { useToast } from "../hooks/useToast";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
+  const { toastError, toastSuccess } = useToast();
 
   const [user_name, setUser_Name] = useState("");
   const [email, setEmail] = useState("");
@@ -21,9 +23,10 @@ export const RegisterPage = () => {
 
     try {
       await registerUserService({ user_name, email, password });
+      toastSuccess("Registrado correctamente");
       navigate("/login");
     } catch (error) {
-      setError(error.message);
+      toastError(error.message);
     }
   };
   return (
