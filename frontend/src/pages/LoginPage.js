@@ -8,7 +8,10 @@ import useFocus from "../hooks/useFocus";
 import TextFocus from "../components/TextFocus/TextFocus";
 import Title from "../components/Title/Title";
 
+import { useToast } from "../hooks/useToast";
+
 export const LoginPage = () => {
+  const { toastError, toastSuccess } = useToast();
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
@@ -24,9 +27,10 @@ export const LoginPage = () => {
       const token = await logInUserService({ email, password });
       console.log(token);
       login(token);
+      toastSuccess("¡Hola de nuevo!");
       navigate("/");
     } catch (error) {
-      setError(error.message);
+      toastError(error.message);
     }
   };
 

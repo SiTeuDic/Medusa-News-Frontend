@@ -10,8 +10,10 @@ import useFocus from "../hooks/useFocus";
 import { useContext, useEffect, useState } from "react";
 import { updateProfileService } from "../Services";
 import { AuthContext } from "../context/AuthContext";
+import { useToast } from "../hooks/useToast";
 
 export const EditProfilePage = () => {
+  const { toastError, toastSuccess } = useToast();
   const navigate = useNavigate();
   const { userId } = useParams();
   const { user, loading, error } = useUser(userId);
@@ -54,9 +56,10 @@ export const EditProfilePage = () => {
         confirmPassword,
         token
       );
+      toastSuccess("Perfil actualizado correctamente");
       navigate(`/user/${user.id}`);
     } catch (error1) {
-      setError1(error1.message);
+      toastError(error1.message);
     }
   };
 
@@ -143,6 +146,7 @@ export const EditProfilePage = () => {
                 onFocus={focName.onFocus}
                 onBlur={focName.onBlur}
                 onChange={(e) => setCurrentName(e.target.value)}
+                default=" "
               />
             </fieldset>
           </li>
