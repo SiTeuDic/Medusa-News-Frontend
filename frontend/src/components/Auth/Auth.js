@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export const Auth = () => {
   const [menu, setMenu] = useState(false);
+
   return (
     <section>
       <GiHamburgerMenu onClick={() => setMenu(!menu)} />
