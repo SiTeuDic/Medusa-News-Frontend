@@ -109,10 +109,10 @@ export const postNewService = async (data, token) => {
 export const EditPostService = async (data, token, id) => {
   const formdata = new FormData();
   formdata.append("title", data.title);
+  formdata.append("image", data.image);
   formdata.append("introduction", data.introduction);
   formdata.append("body", data.body);
   formdata.append("subject", data.subject);
-  formdata.append("image", data.image);
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/new/${id}`, {
     method: "PUT",
     body: formdata,
@@ -232,4 +232,21 @@ export const updateProfileService = async (
 
   const responseData = await response.json();
   return responseData.data;
+};
+
+export const deletePostServer = async (postId, token) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/new/${postId}`,
+    {
+      method: "DELETE",
+
+      headers: {
+        authorization: token,
+      },
+    }
+  );
+
+  const json = await response.json();
+  // /new/:id
+  return json;
 };

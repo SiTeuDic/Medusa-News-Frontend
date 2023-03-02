@@ -9,11 +9,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { GrEdit } from "react-icons/gr/index";
+import { BsFillEraserFill } from "react-icons/bs/index";
+import { deletePostServer } from "../../Services";
 
 const PostCard = ({ post }) => {
-  const { user } = useContext(AuthContext);
+  const { user, token } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log(user);
+
   return (
     <article className="postCard">
       <Subject subject={post.subject} />
@@ -24,12 +26,28 @@ const PostCard = ({ post }) => {
       <Vote vote={post.upVote} id={post.id} />
       {/* TODO: compobar que funciona SIEMPRE*/}
       {user?.id === post.user_id && (
-        <span
-          className="editSpan"
-          onClick={() => navigate(`/editPost/${post.id}`)}
-        >
-          <GrEdit />
-        </span>
+        <article className="editArticle">
+          <span
+            className="editSpan"
+            onClick={() => navigate(`/editPost/${post.id}`)}
+          >
+            <GrEdit />
+          </span>
+          <span
+            className="editSpan"
+            onClick={() => {
+              if (
+                window.confirm(
+                  "Quieres borrar la noticia para siempre?(Eso es mucho tiempo)"
+                )
+              ) {
+                deletePostServer(post.id, token);
+              }
+            }}
+          >
+            <BsFillEraserFill />
+          </span>
+        </article>
       )}
     </article>
   );

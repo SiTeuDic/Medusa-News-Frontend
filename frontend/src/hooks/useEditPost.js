@@ -2,9 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { EditPostService, getSinglePostService } from "../Services";
-
+import { useToast } from "../hooks/useToast";
 const useEditPost = (id) => {
   const { token } = useContext(AuthContext);
+  const { toastError, toastSuccess } = useToast();
 
   const [post, setPost] = useState();
   const [imagePreview, setImagePreview] = useState();
@@ -39,12 +40,12 @@ const useEditPost = (id) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(post);
     try {
       await EditPostService(post, token, id);
+      toastSuccess("Noticia modificada correctamente");
       navigate(`/new/${id}`);
     } catch (error) {
-      console.log(error.message);
+      toastError(error.message);
     }
   };
 

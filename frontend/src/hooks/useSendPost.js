@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { postNewService } from "../Services";
 
+import { useToast } from "../hooks/useToast";
+
 const postInitialValue = {
   title: "",
   introduction: "",
@@ -12,8 +14,8 @@ const postInitialValue = {
 };
 
 const useSendPost = () => {
+  const { toastError, toastSuccess } = useToast();
   const [post, setPost] = useState(postInitialValue);
-  const [error, setError] = useState("");
   const navigate = useNavigate();
   const [imagePreview, setImagePreview] = useState();
 
@@ -32,10 +34,10 @@ const useSendPost = () => {
 
     try {
       await postNewService(post, token);
-
+      toastSuccess("Noticia creada correctamente");
       navigate("/");
     } catch (error) {
-      setError(error.message);
+      toastError(error.message);
     }
   };
 
@@ -51,7 +53,7 @@ const useSendPost = () => {
   };
   return {
     post,
-    error,
+
     handleChange,
     handleSubmit,
     handleFile,
