@@ -3,6 +3,7 @@ import "./Title.css";
 const Title = ({ text }) => {
   return (
     <RoughNotation
+    className="titleRoug"
       show={true}
       animationDelay={500}
       animationDuration={1000}

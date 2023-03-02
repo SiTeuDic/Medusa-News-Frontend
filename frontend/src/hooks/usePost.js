@@ -54,8 +54,10 @@ const usePosts = (subject, userId) => {
       loadPost();
     }
   }, [subject, userId]);
-
-  return { posts, error, loading };
+  const removePost = (id) => {
+    setPost(posts.filter((post) => post.id !== id));
+  };
+  return { posts, error, loading, removePost };
 };
 
 export default usePosts;

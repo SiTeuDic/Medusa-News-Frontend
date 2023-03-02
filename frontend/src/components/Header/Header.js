@@ -5,22 +5,15 @@ import "./Header.css";
 
 export const Header = () => {
   const [header, setHeader] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY >= 250) {
+      setHeader(true);
+    } else if (window.scrollY < 250) {
+      setHeader(false);
+    }
+  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= 250) {
-        setHeader(true);
-      } else if (window.scrollY <= 250) {
-        setHeader(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [header]);
+  window.addEventListener("scroll", handleScroll);
 
   return (
     <header
