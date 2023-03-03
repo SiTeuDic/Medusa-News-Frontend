@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { RoughNotation } from "react-rough-notation";
 import { useNavigate } from "react-router-dom";
 import useFocus from "../../hooks/useFocus";
 import { getPostsBySubjectService } from "../../Services";
-
+import "./SearchBySubject.css";
 const SearchBySubject = () => {
   const [subject, setSubject] = useState("");
   const navigate = useNavigate();
@@ -16,30 +15,14 @@ const SearchBySubject = () => {
   };
 
   return (
-    <section className="formSubjectSection">
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <label
-            className={focSearch.focus ? "input focus" : "input"}
-            htmlFor="search"
-          >
-            {focSearch.focus ? (
-              <RoughNotation
-                show={true}
-                type="underline"
-                padding={[-2, -2]}
-                strokeWidth="2"
-                animationDelay={500}
-                animationDuration={300}
-              >
-                Buscar:
-              </RoughNotation>
-            ) : (
-              "Buscar:"
-            )}
+    <section className="subjectSection">
+      <form className="formSubjectSection" onSubmit={handleSubmit}>
+        <fieldset className="searchFormFieldset">
+          <label className="input" htmlFor="search">
+            Buscar:
           </label>
           <input
-            className="post"
+            className="postSubject"
             type="text"
             placeholder="Introduce un tema"
             id="search"
@@ -49,7 +32,7 @@ const SearchBySubject = () => {
             onChange={(e) => setSubject(e.target.value)}
           />
         </fieldset>
-        <button type="submit" className="postButton">
+        <button type="submit" className="postSubjectButton">
           Enviar
         </button>
       </form>

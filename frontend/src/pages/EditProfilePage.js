@@ -18,7 +18,7 @@ export const EditProfilePage = () => {
   const { userId } = useParams();
   const { user, loading, error } = useUser(userId);
   const { token } = useContext(AuthContext);
-  //console.log(user);
+
   const focBio = useFocus();
   const focName = useFocus();
   const focPassword = useFocus();
@@ -39,7 +39,6 @@ export const EditProfilePage = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [image, setImage] = useState(user.profile_image);
   const [imageUrl, setImageUrl] = useState("");
-  // console.log("[CurrentUSer]: ", currentUser.user.id);
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
@@ -72,8 +71,6 @@ export const EditProfilePage = () => {
     };
     reader.readAsDataURL(file);
   };
-
-  console.log(currentName, bio, newPassword, confirmPassword);
 
   return (
     <section className="formSection">

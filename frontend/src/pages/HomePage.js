@@ -6,12 +6,12 @@ import MenuUser from "../components/menuUser/menuUser";
 export const HomePage = () => {
   return (
     <section className="PageSection">
-      <Title text={"Noticias"} />
-      <PostList />
       <aside>
         <SearchBySubject />
         <MenuUser />
       </aside>
+      <Title text={"Noticias"} />
+      <PostList />
     </section>
   );
 };

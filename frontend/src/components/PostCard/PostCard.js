@@ -12,20 +12,15 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { GrEdit } from "react-icons/gr/index";
 import { BsFillEraserFill } from "react-icons/bs/index";
+import { deletePostServer } from "../../Services";
 
 const PostCard = ({ post, removePost, intro }) => {
   const { user, token } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const deletePostServer = async (postId) => {
+  const deletePost = async (postId) => {
     try {
-      await fetch(`${process.env.REACT_APP_BACKEND}/new/${postId}`, {
-        method: "DELETE",
-
-        headers: {
-          authorization: token,
-        },
-      });
+      deletePostServer(postId, token);
       if (removePost) {
         removePost(post.id);
       } else {
@@ -61,7 +56,7 @@ const PostCard = ({ post, removePost, intro }) => {
                   "Quieres borrar la noticia para siempre?(Eso es mucho tiempo)"
                 )
               ) {
-                deletePostServer(post.id, token);
+                deletePost(post.id, token);
               }
             }}
           >

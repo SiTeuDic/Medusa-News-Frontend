@@ -22,6 +22,7 @@ main {
   text-decoration: none;
 }
 
+/* TOASTYFY */
 .Toastify__toast-body {
   font-family: "Merriweather", serif;
   background-color: #c8d5b9;
@@ -31,8 +32,8 @@ main {
 .Toastify__toast {
   background-color: #c8d5b9;
 }
-/* notFound */
 
+/* notFound */
 section.notFoundSection {
   width: 100vw;
   height: 90vh;
@@ -66,8 +67,33 @@ footer {
   bottom: 0;
 }
 
-/* FORMS */
+/* NOT FOUND MEDIA */
+@media (min-width: 600px) {
+  section.notFoundSection {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
 
+    overflow: hidden;
+  }
+  .notFoundLink {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  img.notFoundImg {
+    margin-left: 10px;
+    width: 100vh;
+  }
+
+  p.notFoundText {
+    font-size: 6rem;
+  }
+}
+
+/* FORMS */
 section.formSection {
   border-radius: 10px;
   box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.665);
@@ -146,7 +172,6 @@ button.postButton {
 }
 
 /* userPage */
-
 ul.userSection {
   display: flex;
   flex-direction: column;
@@ -219,7 +244,6 @@ li.editProfile {
 }
 
 /* ////// SINGLE POST PAGE////// */
-
 article.post-article {
   margin: 10px 5px;
 }
@@ -230,6 +254,7 @@ article.post-article {
   }
 }
 
+/* PAGE GRID */
 @media (min-width: 600px) {
   section.PageSection {
     display: grid;
