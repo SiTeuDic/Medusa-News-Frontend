@@ -16,7 +16,7 @@ const SearchBySubject = () => {
   };
 
   return (
-    <section className="formSection">
+    <section className="formSubjectSection">
       <form onSubmit={handleSubmit}>
         <fieldset>
           <label

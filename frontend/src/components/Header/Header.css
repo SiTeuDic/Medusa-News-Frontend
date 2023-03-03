@@ -1,7 +1,7 @@
 header.mainHeader {
   background-size: cover;
   background-position-y: center;
-
+  width: 100%;
   display: flex;
 
   align-items: center;
@@ -9,7 +9,7 @@ header.mainHeader {
 
   height: 6rem;
 
-  position: sticky;
+  position: fixed;
   top: -1px;
   z-index: 1;
 }
@@ -69,25 +69,15 @@ nav.authNav.active {
 
 @media (min-width: 600px) {
   header.mainHeader.active {
-    height: 5rem;
+    height: 4rem;
   }
 
   header.mainHeader {
-    background-size: cover;
-    background-position-y: top;
-    height: 10rem;
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    position: sticky;
-    top: -1px;
-    margin-bottom: 1rem;
+    height: 8rem;
   }
 
   img.imgHeader {
-    min-width: 7rem;
+    min-width: 5.5rem;
 
     filter: drop-shadow(0px 1px 2px rgb(0, 0, 0));
   }
@@ -104,10 +94,7 @@ nav.authNav.active {
   }
 
   nav.authNav {
-    position: absolute;
-    bottom: 5px;
-    right: 10px;
-    font-size: 1.3rem;
+    visibility: hidden;
   }
 
   /* ACTIVE */
@@ -122,7 +109,6 @@ nav.authNav.active {
   }
 
   nav.authNav.active {
-    bottom: 15px;
-    right: 10px;
+    z-index: -1;
   }
 }

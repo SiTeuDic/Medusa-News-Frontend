@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 export const registerUserService = async ({ user_name, email, password }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/register`, {
     method: "POST",
@@ -247,6 +249,6 @@ export const deletePostServer = async (postId, token) => {
   );
 
   const json = await response.json();
-  // /new/:id
+
   return json;
 };

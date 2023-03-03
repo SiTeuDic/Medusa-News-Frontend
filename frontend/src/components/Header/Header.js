@@ -5,7 +5,6 @@ import "./Header.css";
 
 export const Header = () => {
   const [header, setHeader] = useState(false);
-
   const handleScroll = () => {
     if (window.scrollY >= 250) {
       setHeader(true);
