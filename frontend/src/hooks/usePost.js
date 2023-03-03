@@ -38,7 +38,7 @@ const usePosts = (subject, userId) => {
       try {
         setLoading(true);
         const data = await getPostByUser(userId);
-        console.log("[usePost]:", data);
+
         setPost(data.data);
       } catch (error) {
         setError(error.message);

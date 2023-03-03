@@ -1,16 +1,21 @@
 nav.menuUserNav {
   visibility: hidden;
-  width: max-content;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   padding: 1rem;
+  width: max-content;
+  height: max-content;
+  margin: 12px auto;
+
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
+
+  border: 1px solid black;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.523);
-  border: 1px solid black;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.652);
 }
 
@@ -33,12 +38,6 @@ img.avatarAth {
 @media (min-width: 600px) {
   nav.menuUserNav {
     visibility: visible;
-    position: unset;
-
-    height: max-content;
-    margin: 12px auto;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1.5rem;
+    display: block;
   }
 }

@@ -30,7 +30,6 @@ const useSendPost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("[CREATE]:", post);
 
     try {
       await postNewService(post, token);
