@@ -58,7 +58,7 @@ const PostCard = ({ post, removePost, intro }) => {
             onClick={() => {
               if (
                 window.confirm(
-                  "Quieres borrar la noticia para siempre?(Eso es mucho tiempo)"
+                  "Quieres borrar la noticia para siempre? (Eso es mucho tiempo)"
                 )
               ) {
                 deletePostServer(post.id, token);
