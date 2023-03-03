@@ -1,0 +1,20 @@
+span.listVote {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  position: relative;
+  bottom: 5px;
+  left: 9px;
+  padding: 2px;
+  width: max-content;
+  height: min-content;
+
+  border-radius: 2rem;
+}
+
+p.vote {
+  padding: 3px 9px;
+  cursor: default;
+}

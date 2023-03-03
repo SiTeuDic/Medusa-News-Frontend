@@ -1,14 +1,14 @@
 import TitlePost from "../TitlePost/TitlePost";
-import Vote from "../Vote/Vote";
+import Votes from "../Votes/Votes";
 import "../PostCard/PostCard.css";
 
-const PostCard = ({ post }) => {
+const VoteCard = ({ post }) => {
   return (
     <article className="postCard">
       <TitlePost title={post.title} id={post.id} />
-      <Vote vote={post.upVote} id={post.id} />
+      <Votes vote={post.upVote} id={post.id} />
     </article>
   );
 };
 
-export default PostCard;
+export default VoteCard;
