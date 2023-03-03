@@ -258,12 +258,12 @@ article.post-article {
 @media (min-width: 600px) {
   section.PageSection {
     display: grid;
-    grid-template-columns: 80% auto;
+    grid-template-columns: auto 60% auto;
     grid-template-rows: auto auto;
     grid-template-areas:
-      "title  title"
-      " post mena"
-      "post search";
+      "title title title"
+      "voted post mena"
+      "voted post search";
   }
   .titleRoug {
     margin: 20px;
