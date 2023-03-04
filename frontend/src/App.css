@@ -258,7 +258,7 @@ article.post-article {
 @media (min-width: 600px) {
   section.PageSection {
     display: grid;
-    grid-template-columns: auto 60% auto;
+    grid-template-columns: 20% 60% 20%;
     grid-template-rows: auto auto;
     grid-template-areas:
       "title title title"
