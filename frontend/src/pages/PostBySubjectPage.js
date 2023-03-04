@@ -9,13 +9,13 @@ export const PostBySubjectPage = () => {
 
   return (
     <section className="PageSection">
-      <Title text={subject.toLocaleUpperCase()} />
-
-      <PostList subject={subject} />
       <aside>
         <SearchBySubject />
         <MenuUser />
       </aside>
+      <Title text={subject.toLocaleUpperCase()} />
+
+      <PostList subject={subject} />
     </section>
   );
 };
