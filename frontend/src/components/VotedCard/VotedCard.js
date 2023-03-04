@@ -1,12 +1,12 @@
-import TitlePost from "../TitlePost/TitlePost";
 import Votes from "../Votes/Votes";
+import "./VotedCard.css";
 import "../PostCard/PostCard.css";
 
-const VoteCard = ({ post }) => {
+const VoteCard = ({ post, votes }) => {
   return (
     <article className="postCard">
-      <TitlePost title={post.title} id={post.id} />
-      <Votes vote={post.upVote} id={post.id} />
+      <h3 className="postTitle">{post.title}</h3>
+      <Votes vote={votes} id={post.id} />
     </article>
   );
 };

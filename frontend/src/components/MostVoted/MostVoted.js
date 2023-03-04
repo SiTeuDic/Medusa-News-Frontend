@@ -6,11 +6,11 @@ import VotedCard from "../VotedCard/VotedCard";
 import "../PostList/PostList.css";
 import Title from "../Title/Title";
 import "./MostVoted.css";
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react"; */
 
 const MostVoted = ({ subject, userId }) => {
   const { posts, error, loading } = usePosts(subject, userId);
-  const [vote, setVote] = useState(posts.upVote);
+  /* const [vote, setVote] = useState(posts.upVote);
 
   useEffect(() => {
     const updatedVotes = () => {
@@ -18,7 +18,7 @@ const MostVoted = ({ subject, userId }) => {
       setVote(votes);
     };
     updatedVotes();
-  }, [posts.upVote]);
+  }, [posts.upVote]); */
 
   //console.log(posts);
   if (loading) return <Loading />;
@@ -29,13 +29,13 @@ const MostVoted = ({ subject, userId }) => {
 
   return (
     sortedPosts && (
-      <main className="mostVoted">
-        <Title clasname="mostVotedTitle" text={"Más Votadas"} />
+      <main className="mostVoted mostVotedTitle">
+        <Title text={"Más Votadas"} />
         <ul>
           {sortedPosts.map((post) => {
             return (
               <li key={post.id}>
-                <VotedCard post={post} votes={vote} />
+                <VotedCard post={post} votes={post.upVote} />
               </li>
             );
           })}

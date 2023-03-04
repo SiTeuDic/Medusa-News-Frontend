@@ -7,11 +7,7 @@ import MenuUser from "../components/menuUser/menuUser";
 export const HomePage = () => {
   return (
     <section className="PageSection">
-
       <MostVoted />
-      <Title text={"Noticias"} />
-      <PostList />
-
       <aside>
         <SearchBySubject />
         <MenuUser />
