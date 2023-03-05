@@ -13,7 +13,7 @@ export const RegisterPage = () => {
   const [user_name, setUser_Name] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+
   const focUser = useFocus();
   const focEmail = useFocus();
   const focPass = useFocus();
@@ -131,7 +131,6 @@ export const RegisterPage = () => {
             />
           </fieldset>
           <button className="postButton">Register</button>
-          {error ? <p>{error}</p> : null}
         </form>
       </section>
     </section>
