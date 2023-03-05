@@ -1,7 +1,10 @@
-import { GiHamburgerMenu } from "react-icons/gi";
-import "./Auth.css";
-import NavMenu from "../NavMenu/NavMenu";
 import { useState } from "react";
+
+import NavMenu from "../NavMenu/NavMenu";
+
+import { GiHamburgerMenu } from "react-icons/gi";
+
+import "./Auth.css";
 
 export const Auth = () => {
   const [menu, setMenu] = useState(false);

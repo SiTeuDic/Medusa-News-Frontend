@@ -73,7 +73,7 @@ footer {
     justify-self: center;
     display: flex;
     flex-direction: column;
-
+    margin-top: 3rem;
     overflow: hidden;
   }
   .notFoundLink {
@@ -248,9 +248,56 @@ article.post-article {
   margin: 10px 5px;
 }
 
+.singlePageSection {
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.singlePageSection .subjectSection {
+  margin-top: 0;
+  margin-left: 0.3rem;
+  margin-right: 0.2rem;
+}
+
+.singlePageSection .postCard {
+  margin-left: 0.9rem;
+  margin-right: 0.1rem;
+  margin-top: 1rem;
+  width: 95%;
+  margin-right: 20px;
+}
+
 @media (min-width: 600px) {
   article.post-article {
     margin: 0 10px;
+  }
+
+  .singlePageSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .singlePageSection .postCard {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 3rem;
+    width: 70%;
+    margin-right: 20px;
+  }
+
+  .singlePageSection .subjectSection {
+    margin-top: 3rem;
+    margin-left: 0.3rem;
+    margin-right: 0.2rem;
+  }
+
+  li.editProfile {
+    top: 8rem;
   }
 }
 
@@ -282,7 +329,7 @@ article.post-article {
     padding: 1rem;
     font-family: "Merriweather", serif;
     text-align: left;
-    margin: 18px 0px;
+    margin: 18px auto;
 
     background-color: #c8d5b9;
   }

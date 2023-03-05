@@ -85,3 +85,7 @@ input.postSubject {
     width: unset;
   }
 }
+
+.subjectSection {
+  margin-top: 3rem;
+}

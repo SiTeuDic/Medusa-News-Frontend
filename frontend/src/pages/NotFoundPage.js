@@ -16,7 +16,7 @@ export const NotFoundPage = () => {
           principal
         </RoughNotation>
       </Link>
-      <h2 className="titeleNFP">Página no encontrada</h2>
+      <h2 className="titleNFP">Página no encontrada</h2>
       <p className="notFoundText">
         <RoughNotation
           type="circle"
