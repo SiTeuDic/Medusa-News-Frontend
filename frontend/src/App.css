@@ -16,6 +16,16 @@ main {
   border: none;
 }
 
+.footerDiv {
+  position: relative;
+  z-index: 0;
+}
+
+.footer {
+  position: absolute;
+  font-size: 1rem;
+}
+
 /* LINKS */
 .Link {
   color: black;

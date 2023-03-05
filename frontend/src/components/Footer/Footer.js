@@ -1,3 +1,7 @@
 export const Footer = () => {
-  return <footer>(c) 2023 NVB y DML</footer>;
+  return (
+    <div className="footerDiv">
+      <footer className="footer">(c) 2023 NVB y DML</footer>
+    </div>
+  );
 };
