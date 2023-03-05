@@ -13,10 +13,15 @@ import { useNavigate } from "react-router-dom";
 import { GrEdit } from "react-icons/gr/index";
 import { BsFillEraserFill } from "react-icons/bs/index";
 import { deletePostServer } from "../../Services";
+import { NotFoundPage } from "../../pages/NotFoundPage";
 
 const PostCard = ({ post, removePost, intro }) => {
   const { user, token } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  if (!post) {
+    return <NotFoundPage />;
+  }
 
   const deletePost = async (postId) => {
     try {
