@@ -1,5 +1,5 @@
 import usePosts from "../../hooks/usePost";
-import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
+
 import { Loading } from "../Loading/Loading";
 import VotedCard from "../VotedCard/VotedCard";
 import "../PostList/PostList.css";
@@ -21,7 +21,7 @@ const MostVoted = ({ subject, userId }) => {
 
   //console.log(posts);
   if (loading) return <Loading />;
-  if (error) return <ErrorMessage message={error} />;
+  if (error) return "";
   if (!posts.length) return "";
 
   const sortedPosts = [...posts].sort((a, b) => +b.upVote - +a.upVote);

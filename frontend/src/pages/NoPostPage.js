@@ -1,13 +1,9 @@
 import { RoughNotation } from "react-rough-notation";
 import { Link } from "react-router-dom";
-import MenuUser from "../components/menuUser/menuUser";
 
 export const NoPostPage = () => {
   return (
-    <section className="notFoundSection">
-      <aside>
-        <MenuUser />
-      </aside>
+    <section className="PageSectionNoPost">
       <Link to="/createNew" className="notFoundLink">
         {"Crea una "}
         <RoughNotation
@@ -34,7 +30,7 @@ export const NoPostPage = () => {
           Todavía no hay noticias
         </RoughNotation>
       </h2>
-      <img className="notFoundImg" src="/medusa_notFound.png" alt="" />
+      <img className="notPostImg" src="/medusaNoPost.png" alt="" />
     </section>
   );
 };
