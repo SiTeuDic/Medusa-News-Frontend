@@ -3,6 +3,7 @@ import SearchBySubject from "../components/SearchBySubject/SearchBySubject";
 import Title from "../components/Title/Title";
 import MostVoted from "../components/MostVoted/MostVoted";
 import MenuUser from "../components/menuUser/menuUser";
+import { Footer } from "../components/Footer/Footer";
 
 export const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
       </aside>
       <Title text={"Noticias"} />
       <PostList />
+      <Footer />
     </section>
   );
 };

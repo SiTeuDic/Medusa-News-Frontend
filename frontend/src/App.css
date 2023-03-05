@@ -18,11 +18,13 @@ main {
 
 .footerDiv {
   position: relative;
-  z-index: 0;
+  margin-top: 2rem;
 }
 
 .footer {
   position: absolute;
+  bottom: 1px;
+  right: 0;
   font-size: 1rem;
 }
 

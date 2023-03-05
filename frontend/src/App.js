@@ -12,7 +12,6 @@ import { RegisterPage } from "./pages/RegisterPage";
 import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { UserPage } from "./pages/UserPage";
-import { Footer } from "./components/Footer/Footer";
 
 import SinglePostPage from "./pages/SinglePostPage";
 import CreatePostPage from "./pages/CreatePostPage";
@@ -50,7 +49,6 @@ function App() {
         <Route path="/subject/:subject" element={<PostBySubjectPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Footer />
     </main>
   );
 }
