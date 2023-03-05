@@ -24,7 +24,7 @@ export const LoginPage = () => {
     e.preventDefault();
     try {
       const token = await logInUserService({ email, password });
-      console.log(token);
+      //console.log(token);
       login(token);
       toastSuccess("¡Bienvenid@!");
       navigate("/");
@@ -74,6 +74,9 @@ export const LoginPage = () => {
               required
               onChange={(e) => setPassword(e.target.value)}
               onFocus={focPass.onFocus}
+              Hola
+              de
+              nuevo
               onBlur={focPass.onBlur}
             />
           </fieldset>
