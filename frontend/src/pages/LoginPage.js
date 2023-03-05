@@ -16,7 +16,6 @@ export const LoginPage = () => {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const focEmail = useFocus();
   const focPass = useFocus();
@@ -25,9 +24,9 @@ export const LoginPage = () => {
     e.preventDefault();
     try {
       const token = await logInUserService({ email, password });
-      console.log(token);
+      //console.log(token);
       login(token);
-      toastSuccess("¡Hola de nuevo!");
+      toastSuccess("¡Bienvenid@!");
       navigate("/");
     } catch (error) {
       toastError(error.message);
@@ -75,12 +74,14 @@ export const LoginPage = () => {
               required
               onChange={(e) => setPassword(e.target.value)}
               onFocus={focPass.onFocus}
+              Hola
+              de
+              nuevo
               onBlur={focPass.onBlur}
             />
           </fieldset>
 
           <button className="postButton">Login</button>
-          {error ? <p>{error}</p> : null}
         </form>
       </section>
     </section>

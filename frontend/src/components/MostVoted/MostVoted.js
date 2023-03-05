@@ -24,7 +24,9 @@ const MostVoted = ({ subject, userId }) => {
   if (error) return "";
   if (!posts.length) return "";
 
-  const sortedPosts = [...posts].sort((a, b) => +b.upVote - +a.upVote);
+  const sortedPosts = [...posts]
+    .sort((a, b) => +b.upVote - +a.upVote)
+    .slice(0, 4);
 
   return (
     sortedPosts && (
