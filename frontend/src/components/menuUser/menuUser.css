@@ -1,0 +1,43 @@
+nav.menuUserNav {
+  visibility: hidden;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+  width: max-content;
+  height: max-content;
+  margin: 12px auto;
+
+  text-align: center;
+  font-size: 1.5rem;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.523);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.652);
+}
+
+span.avatarSpan {
+  border: 1px solid black;
+  display: inline-block;
+  margin-right: 5px;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  background-color: rgb(60, 56, 51);
+  border-radius: 50%;
+}
+
+img.avatarAth {
+  object-fit: cover;
+  width: 2rem;
+  height: 2rem;
+}
+@media (min-width: 600px) {
+  nav.menuUserNav {
+    visibility: visible;
+    display: block;
+  }
+}

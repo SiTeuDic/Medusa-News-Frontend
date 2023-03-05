@@ -1,0 +1,88 @@
+.formSubjectSection {
+  background-color: #c8d5b9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: min-content;
+  height: 3rem;
+  padding: 0.5rem;
+  gap: 1rem;
+
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.searchFormFieldset {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: min-content;
+}
+
+input.postSubject {
+  width: 13rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  border-bottom: none;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.653);
+  font-family: "Merriweather", serif;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.4rem;
+  background-color: #68b0ab;
+}
+.postSubjectButton {
+  background-color: #445f5b;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.653);
+  padding: 0.5rem;
+  max-width: 210px;
+}
+
+@media (min-width: 600px) {
+  .formSubjectSection {
+    background-color: #c8d5b9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+    gap: 1rem;
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  .searchFormFieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+    gap: 1rem;
+  }
+
+  .formSubjectSection {
+    border-radius: 10px;
+    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.31);
+    height: min-content;
+    width: 100%;
+    padding: 0.5rem;
+    font-family: "Merriweather", serif;
+
+    margin: 18px 0px;
+
+    background-color: #c8d5b9;
+  }
+  .postSubjectInput {
+    width: 100%;
+  }
+
+  input.postSubject {
+    margin: 0;
+    width: 17vw;
+  }
+}

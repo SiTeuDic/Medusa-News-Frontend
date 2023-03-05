@@ -1,14 +1,11 @@
+import { Link } from "react-router-dom";
 import "./Subject.css";
 
 const Subject = ({ subject }) => {
   return (
-    <span className="subject">
-      <ul className="subjectList">
-        <li className="subjectListItem">{subject}</li>
-        <li className="subjectListItem">{subject}</li>
-        <li className="subjectListItem">{subject}</li>
-      </ul>
-    </span>
+    <Link to={`/subject/${subject}`}>
+      <span className="subject">{subject.toUpperCase()}</span>
+    </Link>
   );
 };
 

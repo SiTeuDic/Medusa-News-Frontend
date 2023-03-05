@@ -1,5 +1,7 @@
-h2.title {
-  margin: 5px;
+h2 {
+  margin-top: 1rem;
+  font-family: "Merriweather", serif;
   text-align: center;
-  border-bottom: 1px double black;
+  font-size: 2rem;
+  font-weight: bold;
 }

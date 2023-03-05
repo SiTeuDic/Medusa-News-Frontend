@@ -1,0 +1,13 @@
+main.mainPostList {
+  display: flex;
+  justify-content: flex-start;
+}
+
+ul {
+  list-style: none;
+  height: min-content;
+}
+
+li {
+  margin-top: 1rem;
+}

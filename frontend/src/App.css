@@ -1,38 +1,380 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Merriweather:wght@300;400&family=Roboto:wght@300&family=Special+Elite&display=swap");
+
+html {
+  background-color: #faf3dd;
+}
+main {
+  background-color: #faf3dd;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+.footerDiv {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 1px;
+  right: 0;
+  font-size: 1rem;
+}
+
+/* LINKS */
+.Link {
+  color: black;
+  text-decoration: none;
+}
+
+/* TOASTYFY */
+.Toastify__toast-body {
+  font-family: "Merriweather", serif;
+  background-color: #c8d5b9;
+  color: black;
+}
+
+.Toastify__toast {
+  background-color: #c8d5b9;
+}
+
+/* notFound */
+section.notFoundSection {
+  margin-top: 1rem;
+  width: 100vw;
+  height: 90vh;
   text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.notFoundLink {
+  margin-top: 5px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+img.notFoundImg {
+  margin-left: 5px;
+  width: 120%;
+}
+
+p.notFoundText {
+  font-size: 6rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+/* NOT FOUND MEDIA */
+@media (min-width: 600px) {
+  section.notFoundSection {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    overflow: hidden;
+  }
+  .notFoundLink {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  img.notFoundImg {
+    margin-left: 10px;
+    width: 100vh;
+  }
+
+  p.notFoundText {
+    font-size: 6rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* FORMS */
+section.formSection {
+  border-radius: 10px;
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.665);
+  height: max-content;
+  width: 90vw;
+  padding: 1rem;
+  font-family: "Merriweather", serif;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* cambiado por warning start por flex-start */
+
+  margin-top: 20px;
+  margin-left: 5%;
+  background-color: #c8d5b9;
+}
+
+textarea.post {
+  width: 100%;
+  height: 7rem;
+  font-family: "Merriweather", serif;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0.5rem 0rem;
+  background-color: #68b0ab;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.653);
+}
+
+input.post {
+  width: 100%;
+  height: 2rem;
+  border-bottom: none;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.653);
+  font-family: "Merriweather", serif;
+  margin: 0.5rem 0rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.4rem;
+  background-color: #68b0ab;
+}
+
+input.post:focus,
+textarea.post:focus {
+  transform: scale(1);
+
+  transition: scale 0.2s linear 0.2s;
+
+  border: 1.5px solid black;
+  padding: 0.7rem;
+}
+
+label.focus {
+  font-size: 1.3rem;
+  transition: 0.2s linear 0.2s;
+  z-index: 1;
+}
+
+button.postButton {
+  display: block;
+  background-color: #445f5b;
+  font-size: 1.3rem;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.653);
+
+  padding: 0.5rem;
+  margin: auto;
+}
+
+@media (min-width: 600px) {
+  section.formSection {
+    margin: 20px auto;
+    width: 40rem;
+  }
+}
+
+/* userPage */
+ul.userSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+li.avatarUserli {
+  margin: 10px auto;
+  border: 4px solid black;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  background-color: rgb(182, 178, 178);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.avatarUserDefault {
+  object-fit: cover;
+  width: 10rem;
+  height: 10rem;
+  filter: grayscale(1.5) drop-shadow(0 0 1px rgba(0, 0, 0, 0.389));
+}
+
+.avatarUser {
+  object-fit: cover;
+  width: 10rem;
+  height: 10rem;
+}
+
+.regitredAtP {
+  display: block;
+  color: gray;
+}
+
+p.biografiaP {
+  font-family: "Merriweather", serif;
+
+  margin: 10px;
+}
+
+li.editProfile {
+  position: absolute;
+  top: 5.5rem;
+  right: 15px;
+  font-size: 1.8rem;
+}
+
+.editProfile {
+  color: black;
+}
+
+/* EditPtofile */
+
+.editImage {
+  text-align: center;
+}
+
+.editImgIcon {
+  position: absolute;
+  top: 14.1rem;
+  right: 9rem;
+  font-size: 5rem;
+  opacity: 25%;
+  z-index: 0;
+}
+
+.testSpan {
+  width: 100%;
+  height: 2rem;
+
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+}
+
+/* ////// SINGLE POST PAGE////// */
+article.post-article {
+  margin: 10px 5px;
+}
+
+.singlePageSection {
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.singlePageSection .subjectSection {
+  margin-left: 0.3rem;
+  margin-right: 0.2rem;
+}
+
+.singlePageSection .postCard {
+  margin-left: 0.9rem;
+  margin-right: 0.1rem;
+  margin-top: 1rem;
+  width: 95%;
+  margin-right: 20px;
+}
+
+@media (min-width: 600px) {
+  article.post-article {
+    margin: 0 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .singlePageSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .singlePageSection .postCard {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 3rem;
+    width: 70%;
+    margin-right: 20px;
+  }
+
+  .singlePageSection .subjectSection {
+    margin-top: 3rem;
+    margin-left: 0.3rem;
+    margin-right: 0.2rem;
+  }
+
+  li.editProfile {
+    top: 8rem;
+  }
+}
+
+/* PAGE GRID */
+
+@media (min-width: 600px) {
+  section.PageSection {
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "title title title"
+      "voted post mena"
+      "voted post search";
+  }
+  .titleRoug {
+    margin: 20px;
+    grid-area: title;
+  }
+  .mainPostList {
+    margin: 0 10px;
+    grid-area: post;
+  }
+
+  .NavMenuSection {
+    grid-area: mena;
+    position: relative;
+    height: min-content;
+    width: 100%;
+
+    margin: 16px auto;
+  }
+}
+
+/* PageSectionNoPost */
+
+.PageSectionNoPost {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  grid-area: post;
+}
+
+.notPostImg {
+  width: 50vw;
+}
+
+@media (min-width: 600px) {
+  .PageSectionNoPost {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    grid-area: post;
   }
 }

@@ -1,0 +1,11 @@
+.mostVoted {
+  display: none;
+  margin: 1rem 0.5rem;
+}
+
+@media (min-width: 600px) {
+  .mostVoted {
+    display: block;
+    grid-area: voted;
+  }
+}

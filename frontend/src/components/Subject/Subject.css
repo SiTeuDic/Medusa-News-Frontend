@@ -5,29 +5,32 @@
 }
 
 span.subject {
-  width: 100%;
-}
+  font-family: "Merriweather", serif;
 
-ul.subjectList {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
+  border: 2px solid rgb(19, 10, 152);
+  border-radius: 10px;
+  color: black;
+  background-color: #faf3dd;
+  padding: 5px;
+
+  font-size: small;
+  font-weight: 500;
+
+  display: inline-block;
   align-items: center;
-  text-align: center;
-  margin: 10px 0;
-}
-.subjectListItem {
-  border: 1px solid black;
-  border-radius: 3px;
-  color: antiquewhite;
-  background-color: rgba(17, 0, 255, 0.521);
+  height: max-content;
+  width: min-content;
+  margin-right: 2rem;
 
-  width: 5em;
+  position: relative;
+  top: 10px;
+  left: 9px;
 }
 
-.subjectListItem:hover {
+span.subject:hover {
   cursor: pointer;
-  background-color: rgba(19, 10, 152, 0.664);
-
+  color: white;
+  background-color: rgb(19, 10, 152);
+  transform: scale(1.05);
   transition: all 0.3s;
 }

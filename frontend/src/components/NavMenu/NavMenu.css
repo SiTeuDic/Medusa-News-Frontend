@@ -1,0 +1,38 @@
+nav.menuNav {
+  position: absolute;
+  top: 6.5rem;
+  right: 0.3rem;
+  width: max-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+
+  border-radius: 5px;
+  background-color: rgb(196, 182, 182);
+  border: 1px solid rgba(207, 174, 174, 0.91);
+
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.652);
+}
+
+span.avatarSpan {
+  border: 1px solid black;
+  display: inline-block;
+  margin-right: 5px;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  background-color: rgb(60, 56, 51);
+  border-radius: 50%;
+}
+
+img.avatarAth {
+  object-fit: cover;
+  width: 2rem;
+  height: 2rem;
+}

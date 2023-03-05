@@ -1,10 +1,43 @@
-div.voteDiv {
-  width: 90%;
+span.listVote {
   display: flex;
+  flex-direction: row;
 
-  border-top: 1px solid black;
+  align-items: center;
+
+  position: relative;
+  bottom: 5px;
+  left: 9px;
+  padding: 2px;
+  width: max-content;
+  height: min-content;
+
+  border-radius: 2rem;
+}
+
+p.vote,
+p.buttonVote {
+  padding: 3px 5px;
+  height: 100%;
+  font-size: 1.5rem;
+}
+
+p.buttonVote {
+  transform: rotate(20deg);
+}
+
+p.buttonVote.blur {
+  filter: blur(1px);
+}
+p.buttonVote.blur:hover {
+  filter: blur(0px);
 }
 
 p.vote {
-  margin: 4px;
+  padding: 3px 9px;
+  cursor: default;
+}
+
+p.buttonVote.active {
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.382));
+  color: rgb(42, 211, 197);
 }
