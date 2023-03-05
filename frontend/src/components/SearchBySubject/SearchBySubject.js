@@ -18,8 +18,8 @@ const SearchBySubject = () => {
     <section className="subjectSection">
       <form className="formSubjectSection" onSubmit={handleSubmit}>
         <fieldset className="searchFormFieldset">
-          <label className="input" htmlFor="search">
-            Buscar:
+          <label className="postSubjectInput" htmlFor="search">
+            Buscar
           </label>
           <input
             className="postSubject"

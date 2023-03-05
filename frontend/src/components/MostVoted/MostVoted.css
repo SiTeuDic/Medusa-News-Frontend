@@ -1,8 +1,6 @@
 .mostVoted {
   display: none;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 1rem 0.5rem;
 }
 
 @media (min-width: 600px) {

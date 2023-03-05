@@ -1,9 +1,13 @@
 import { RoughNotation } from "react-rough-notation";
 import { Link } from "react-router-dom";
+import MenuUser from "../components/menuUser/menuUser";
 
 export const NoPostPage = () => {
   return (
     <section className="notFoundSection">
+      <aside>
+        <MenuUser />
+      </aside>
       <Link to="/createNew" className="notFoundLink">
         {"Crea una "}
         <RoughNotation
