@@ -9,7 +9,7 @@ article.postCard {
 article.editArticle {
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: flex-end;
   position: absolute;
   bottom: 10px;
   right: 15px;
