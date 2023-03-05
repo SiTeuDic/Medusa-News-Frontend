@@ -332,16 +332,9 @@ article.post-article {
 
     margin: 16px auto;
   }
-  .PageSectionNoPost {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    grid-area: post;
-  }
 }
+
+/* PageSectionNoPost */
 
 .PageSectionNoPost {
   margin-top: 1rem;
@@ -355,4 +348,16 @@ article.post-article {
 
 .notPostImg {
   width: 50vw;
+}
+
+@media (min-width: 600px) {
+  .PageSectionNoPost {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    grid-area: post;
+  }
 }
