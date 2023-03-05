@@ -1,9 +1,17 @@
 import { RoughNotation } from "react-rough-notation";
 import { Link } from "react-router-dom";
+import MenuUser from "../components/menuUser/menuUser";
+import MostVoted from "../components/MostVoted/MostVoted";
+import SearchBySubject from "../components/SearchBySubject/SearchBySubject";
 
 export const NotFoundPage = () => {
   return (
     <section className="notFoundSection">
+      <MostVoted />
+      <aside>
+        <SearchBySubject />
+        <MenuUser />
+      </aside>
       <Link to="/" className="notFoundLink">
         {"Ir a la página "}
         <RoughNotation
