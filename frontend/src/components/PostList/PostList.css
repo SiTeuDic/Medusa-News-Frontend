@@ -1,6 +1,6 @@
 main.mainPostList {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 ul {
