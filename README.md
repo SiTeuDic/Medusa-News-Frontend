@@ -12,49 +12,43 @@ Sigue estos pasos para poder usar esta **WEB** en tu máquina local a efectos de
 
 ❗ _Importante_ ❗
 
-Es necesario tener con anterioridad el la **API** para el funcionaminto de la página, puedes encontrar el repositório y las intrucciones de como instalarlo en el siguiente [**aqui**](https://github.com/Davidmarla/proyectoNoticias)
+Es necesario tener con anterioridad la **API** para el funcionamiento de la página, puedes encontrar el repositorio y las instrucciones de como instalarlo en el siguiente [**aquí**](https://github.com/Davidmarla/proyectoNoticias)
 
 ### Instalación 🔧
 
-Una vez clonado el repositorio en local e intalada la **API** y situados en la carpeta raiz del repositorio se debe ajecutar el comando en la terminal:
+Una vez clonado el repositorio en local e instalada la **API** y situados en la carpeta raíz del repositorio, se debe ejecutar el comando en la terminal:
 
 ```
 npm i
 ```
 
-Para instalar todas las dependencias necesarias para el funcionamineto de la **WEB** ya incluídas en el archivo _package.json_.
+Para instalar todas las dependencias necesarias para el funcionamiento de la **WEB** ya incluidas en el archivo _package.json_.
 
-Una vez instalado los paquetes necearios y **lanzado el servidor**:
+Una vez instalado los paquetes necesarios y **lanzado el servidor**:
 
 ```
 npm start
 ```
 
- si todo está correcto devería abrirse automaticamente la **WEB**
+y si todo está correcto debería abrirse automáticamente la **WEB**
+
 ## Funcionalidades 🚀
 
 ### De usuario
 
 -Crear usuarios
-
 -Iniciar y cerrar sesión
-
 -Modificar el perfil
 
 ### De noticias
 
--En la pagína principal se muestras las noticias por orden de creación
-
--Acceder mediante el buscador por temas o haciendo click en en los temas que aparecen en las noticias a el listado de todas dentro del mismo tema
-
+-En la página principal se muestran las noticias por orden de creación
+-Acceder mediante el buscador por temas o haciendo click en los temas que aparecen en las noticias al listado de todas dentro del mismo tema
 -Votar las noticias
-
 -Visualizar una única noticia
-
 -Visualizar las noticias más votadas(solo en modo escritorio)
 
 -Crear noticias
-
 -Editar y borrar noticias creadas por nuestro usuario
 
 ## Programas usados 🛠️
@@ -63,8 +57,7 @@ npm start
 - Mysql Workbench
 - Postman
 - node
--React
 
 ## Autores
 
-[Nacho V. Bordera](https://github.com/SiTeuDic) y [David Martínez](https://github.com/Davidmarla)
+[**Nacho V. Bordera**](https://github.com/SiTeuDic) y [**David Martínez**](https://github.com/Davidmarla)
