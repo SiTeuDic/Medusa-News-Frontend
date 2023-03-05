@@ -23,7 +23,7 @@ const MostVoted = ({ subject, userId }) => {
   //console.log(posts);
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
-  if (!posts.length) return <NoPostPage />;
+  if (!posts.length) return "";
 
   const sortedPosts = [...posts].sort((a, b) => +b.upVote - +a.upVote);
 
