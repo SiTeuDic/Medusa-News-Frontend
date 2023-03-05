@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage/ErrorMessage";
 import { Loading } from "../components/Loading/Loading";
 import useUser from "../hooks/useUser";
-import { GrEdit } from "react-icons/gr/index";
 //import RegistredAt from "../components/RegistredAt/RegistredAt";
 import Title from "../components/Title/Title";
 import { RoughNotation } from "react-rough-notation";
@@ -26,7 +25,7 @@ export const EditProfilePage = () => {
 
   const [currentName, setCurrentName] = useState(user.name);
   const [bio, setBio] = useState(user.bio);
-  const [error1, setError1] = useState("");
+  /* const [error1, setError1] = useState(""); */
 
   useEffect(() => {
     if (user) {
@@ -82,7 +81,6 @@ export const EditProfilePage = () => {
           <li className="avatarUserli">
             <fieldset className="inpFieldset">
               <label>
-                <GrEdit className="editImgIcon" />
                 {imageUrl ? (
                   <img
                     className="avatarUser"
@@ -113,6 +111,7 @@ export const EditProfilePage = () => {
               </label>
             </fieldset>
           </li>
+          <p className="editImage">Click en la imagen para editar</p>
           <li>
             <fieldset>
               <label
@@ -250,7 +249,6 @@ export const EditProfilePage = () => {
             <button className="postButton">Enviar</button>
           </li>
         </ul>
-        {error ? <p>{error1}</p> : null}
       </form>
     </section>
   );

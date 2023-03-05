@@ -1,5 +1,4 @@
 import usePosts from "../../hooks/usePost";
-import { NoPostPage } from "../../pages/NoPostPage";
 import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
 import { Loading } from "../Loading/Loading";
 import VotedCard from "../VotedCard/VotedCard";
