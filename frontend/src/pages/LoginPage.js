@@ -16,7 +16,6 @@ export const LoginPage = () => {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const focEmail = useFocus();
   const focPass = useFocus();
@@ -27,7 +26,7 @@ export const LoginPage = () => {
       const token = await logInUserService({ email, password });
       console.log(token);
       login(token);
-      toastSuccess("¡Hola de nuevo!");
+      toastSuccess("¡Bienvenid@!");
       navigate("/");
     } catch (error) {
       toastError(error.message);
@@ -80,7 +79,6 @@ export const LoginPage = () => {
           </fieldset>
 
           <button className="postButton">Login</button>
-          {error ? <p>{error}</p> : null}
         </form>
       </section>
     </section>
