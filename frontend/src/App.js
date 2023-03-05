@@ -18,6 +18,7 @@ import CreatePostPage from "./pages/CreatePostPage";
 import { PostBySubjectPage } from "./pages/PostBySubjectPage";
 import EditPostPage from "./pages/EditPostPage";
 import EditProfilePage from "./pages/EditProfilePage";
+import { NoPostPage } from "./pages/NoPostPage";
 
 function App() {
   return (
@@ -47,6 +48,8 @@ function App() {
         <Route path="/createNew" element={<CreatePostPage />} />
         <Route path="/editPost/:id" element={<EditPostPage />} />
         <Route path="/subject/:subject" element={<PostBySubjectPage />} />
+        <Route path="/notFoundPost" element={<NoPostPage />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </main>

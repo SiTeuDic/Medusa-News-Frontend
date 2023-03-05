@@ -22,6 +22,7 @@ img.medusaError {
 @media (min-width: 600px) {
   section.errorSection {
     gap: 1rem;
+    grid-area: post;
   }
   img.medusaError {
     position: unset;
