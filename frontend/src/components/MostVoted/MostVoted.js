@@ -1,4 +1,5 @@
 import usePosts from "../../hooks/usePost";
+
 import { Loading } from "../Loading/Loading";
 import VotedCard from "../VotedCard/VotedCard";
 import "../PostList/PostList.css";

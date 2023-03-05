@@ -196,6 +196,7 @@ li.avatarUserli {
   height: 10rem;
   filter: grayscale(1.5) drop-shadow(0 0 1px rgba(0, 0, 0, 0.389));
 }
+
 .avatarUser {
   object-fit: cover;
   width: 10rem;
@@ -225,6 +226,10 @@ li.editProfile {
 }
 
 /* EditPtofile */
+
+.editImage {
+  text-align: center;
+}
 
 .editImgIcon {
   position: absolute;
